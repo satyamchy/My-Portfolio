@@ -25,7 +25,7 @@ const Chatbot = () => {
     const getCleanContext = () => {
         const cleanSkills = SKILLS_DATA.map(({ icon, color, ...rest }) => rest);
         const cleanProjects = PROJECTS_DATA.map(({ image, ...rest }) => rest);
-        
+
         return JSON.stringify({
             portfolio_owner: HERO_DATA,
             about: ABOUT_DATA,
@@ -48,10 +48,10 @@ const Chatbot = () => {
 
         try {
             // Replace this specific URL with your actual backend URL or use import.meta.env.VITE_API_URL
-            const API_URL = import.meta.env.VITE_AI_API_URL || 'http://localhost:3000/api/chat';
-            
+            const API_URL = import.meta.env.VITE_AI_API_URL || 'http://127.0.0.1:8000/api';
+
             // We use a try-catch for the fetch in case the backend isn't set up yet.
-            const response = await fetch(API_URL, {
+            const response = await fetch(API_URL + '/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -67,30 +67,30 @@ const Chatbot = () => {
 
             const data = await response.json();
             setMessages((prev) => [...prev, { role: 'ai', content: data.reply }]);
-            
+
         } catch (error) {
             console.error("Chatbot Error:", error);
             // Fallback mock response for testing before backend is fully integrated
             setTimeout(() => {
-                setMessages((prev) => [...prev, { 
-                    role: 'ai', 
-                    content: "My backend connection is currently being set up! Once connected, I will read all of Satyam's data to answer your question perfectly." 
+                setMessages((prev) => [...prev, {
+                    role: 'ai',
+                    content: "My backend connection is currently being set up! Once connected, I will read all of Satyam's data to answer your question perfectly."
                 }]);
                 setIsLoading(false);
             }, 1000);
             return; // prevent setting isLoading false twice
         }
-        
+
         setIsLoading(false);
     };
 
     return (
         <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
-            
+
             {/* Expanded Chat Window */}
             <div className={`transition-all duration-300 transform origin-bottom-right ${isOpen ? 'scale-100 opacity-100 mb-4' : 'scale-0 opacity-0 h-0 w-0 mb-0 pointer-events-none'}`}>
                 <div className="glass w-[350px] sm:w-[400px] h-[500px] max-h-[70vh] rounded-2xl flex flex-col border border-slate-700/50 shadow-2xl overflow-hidden bg-slate-900/95 backdrop-blur-xl">
-                    
+
                     {/* Header */}
                     <div className="bg-slate-800/80 p-4 border-b border-slate-700/50 flex justify-between items-center shrink-0">
                         <div className="flex items-center gap-3">
@@ -137,14 +137,14 @@ const Chatbot = () => {
                     {/* Input Area */}
                     <form onSubmit={handleSend} className="p-4 bg-slate-800/40 border-t border-slate-700/50 shrink-0">
                         <div className="relative flex items-center">
-                            <input 
-                                type="text" 
+                            <input
+                                type="text"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
-                                placeholder="Ask about my experience..." 
+                                placeholder="Ask about my experience..."
                                 className="w-full bg-slate-900/50 border border-slate-700/50 rounded-full py-3 pl-4 pr-12 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500/50 transition-colors"
                             />
-                            <button 
+                            <button
                                 type="submit"
                                 disabled={!input.trim() || isLoading}
                                 className="absolute right-2 p-2 bg-emerald-500 text-slate-900 rounded-full hover:bg-emerald-400 disabled:opacity-50 disabled:hover:bg-emerald-500 transition-colors"
@@ -157,7 +157,7 @@ const Chatbot = () => {
             </div>
 
             {/* Floating Toggle Button */}
-            <button 
+            <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`relative group flex items-center justify-center h-14 w-14 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all duration-300 hover:scale-110 z-50 ${isOpen ? 'bg-slate-800 text-slate-200 border border-slate-700/50' : 'bg-emerald-500 text-slate-900'}`}
             >
