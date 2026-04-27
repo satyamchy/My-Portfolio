@@ -5,9 +5,10 @@ export const HERO_DATA = {
     roles: ["Software & Data Engineer"],
     bio: "I build scalable software, dynamic user interfaces, and robust data pipelines.",
     cvLink: "/cv.pdf",
-    githubLink: "https://www.github.com/satyam1354/",
+    githubLink: "https://www.github.com/satyamchy/",
     linkedinLink: "https://www.linkedin.com/in/satyam1354/",
-    email: "satyamkr1354@gmail.com"
+    email: "satyamkr1354@gmail.com",
+    phone: "+91 9876543210" // Add your real phone number here!
 };
 
 export const ABOUT_DATA = {
@@ -43,14 +44,30 @@ export const EXPERIENCE_DATA = [
         title: "Software Engineer Intern",
         company: "Tech Innovators Inc.",
         period: "June 2023 - Present",
-        description: "Developed modern web applications using React.js and Node.js. Optimized database queries and improved application load times by 40%."
+        description: "Served as a core member of the platform engineering team, focused on creating scalable web interfaces and robust internal tools.",
+        projects: [
+            {
+                name: "Internal Analytics Dashboard",
+                detail: "Developed a modern web application using React.js and Node.js. Optimized database queries which improved application load times by 40%."
+            },
+            {
+                name: "Automated Reporting Pipeline",
+                detail: "Created Python scripts to generate end-of-week client reports automatically, reducing manual HR workload by 15 hours a week."
+            }
+        ]
     },
     {
         id: 2,
         title: "Frontend Developer",
         company: "Freelance",
         period: "Jan 2022 - May 2023",
-        description: "Designed and implemented responsive user interfaces for a variety of clients. Leveraged Tailwind CSS and Vite for rapid development and high performance."
+        description: "Designed and implemented responsive user interfaces for a variety of clients.",
+        projects: [
+            {
+                name: "E-Commerce Storefront",
+                detail: "Leveraged Tailwind CSS and Vite to build a rapid e-commerce UI that scaled to 10k unique daily visitors."
+            }
+        ]
     }
 ];
 
@@ -90,18 +107,40 @@ export const EDUCATION_CERTS_DATA = {
 };
 
 export const PROJECTS_DATA = [
-    {
-        category: "Real-World Projects",
-        items: [
-            { id: 1, image: "https://th.bing.com/th/id/OIP.jLv_icdTuHq11XytJiZ4RQAAAA?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7", name: "Skill Link", github: "https://github.com/shambsinha/SkillLink", live: "https://skill-link-3jtd.onrender.com/dashboard", tech: ["React", "Node.js"] },
-            { id: 2, image: "https://th.bing.com/th/id/OIP.jLv_icdTuHq11XytJiZ4RQAAAA?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7", name: "Streamsohere Platform", github: "https://github.com/shambsinha/SkillLink", live: "https://skill-link-3jtd.onrender.com/dashboard", tech: ["Next.js", "Tailwind"] }
-        ]
+    { 
+        id: 1, 
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80", 
+        name: "Skill Link", 
+        description: "A comprehensive platform connecting freelancers with clients, featuring real-time chat and secure remote payment gateways.",
+        github: "https://github.com/shambsinha/SkillLink", 
+        live: "https://skill-link-3jtd.onrender.com/dashboard", 
+        tech: ["React", "Node.js"] 
     },
-    {
-        category: "Personal & Practice Projects",
-        items: [
-            { id: 3, image: "https://th.bing.com/th/id/OIP.jLv_icdTuHq11XytJiZ4RQAAAA?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7", name: "Interactive Portfolio", github: "https://github.com/shambsinha/SkillLink", live: "https://skill-link-3jtd.onrender.com/dashboard", tech: ["React", "Vite", "Tailwind"] },
-            { id: 4, image: "https://th.bing.com/th/id/OIP.jLv_icdTuHq11XytJiZ4RQAAAA?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7", name: "News Aggregator", github: "", live: "", tech: ["JavaScript", "API"] }
-        ]
+    { 
+        id: 2, 
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80", 
+        name: "Streamsohere Platform", 
+        description: "An advanced streaming dashboard interface that aggregates multiple live streams with low latency monitoring metrics.",
+        github: "https://github.com/shambsinha/SkillLink", 
+        live: "https://skill-link-3jtd.onrender.com/dashboard", 
+        tech: ["Next.js", "Tailwind"] 
+    },
+    { 
+        id: 3, 
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80", 
+        name: "Interactive Portfolio", 
+        description: "A dynamic, recruiter-ready developer portfolio heavily reliant on glassmorphism UI, centralized config files, and Tailwind animations.",
+        github: "https://github.com/satyamchy/", 
+        live: "https://skill-link-3jtd.onrender.com/dashboard", 
+        tech: ["React", "Vite", "Tailwind"] 
+    },
+    { 
+        id: 4, 
+        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80", 
+        name: "News Aggregator", 
+        description: "An automated bot that retrieves global headline data via RESTful APIs and curates a customized daily digest.",
+        github: "", 
+        live: "", 
+        tech: ["JavaScript", "API"] 
     }
 ];

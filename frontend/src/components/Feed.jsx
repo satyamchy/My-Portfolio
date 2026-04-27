@@ -1,44 +1,69 @@
 import React from 'react'
-import { Github, Linkedin, Download } from 'lucide-react';
+import { Download, Sparkles } from 'lucide-react';
 import { HERO_DATA } from '../data';
 
 const Feed = () => {
     return (
-        <section id="feed" className='flex flex-col md:flex-row justify-center w-full gap-12 md:gap-24 items-center min-h-[75vh]'>
-            <div className='relative group'>
-                <div className='absolute -inset-1 bg-gradient-to-r from-emerald-500 to-sky-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200'></div>
-                <img className='relative w-56 h-56 md:w-72 md:h-72 rounded-full object-cover border-4 border-slate-800 shadow-2xl z-10' src='https://th.bing.com/th/id/OIP.jLv_icdTuHq11XytJiZ4RQAAAA?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' alt={HERO_DATA.name} />
-            </div>
+        <section id="feed" className='flex flex-col-reverse md:flex-row justify-between w-full gap-16 md:gap-10 items-center min-h-[85vh] py-10'>
+            
+            {/* Left Column: Text & CTA */}
+            <div className='flex flex-col items-center md:items-start text-center md:text-left lg:w-3/5 z-10'>
+                
+                {/* Premium Pulsing Availability Badge */}
+                <div className="flex items-center gap-3 px-5 py-2 glass rounded-full border-emerald-500/30 bg-emerald-500/10 backdrop-blur-md mb-6 md:mb-8 w-fit shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+                    <span className="relative flex h-3 w-3">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></span>
+                    </span>
+                    <span className="text-emerald-400 text-xs md:text-sm font-bold uppercase tracking-widest">Available for opportunities</span>
+                </div>
 
-            <div className='text-center md:text-left flex flex-col items-center md:items-start'>
-                <p className='text-emerald-400 font-semibold tracking-widest mb-2 uppercase text-sm'>Hello I'm</p>
-                <h1 className='text-5xl md:text-7xl font-extrabold mb-4 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-slate-100 via-slate-300 to-slate-500'>
+                <h1 className='text-5xl md:text-7xl lg:text-8xl font-black mb-4 pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-100 via-slate-300 to-slate-500 tracking-tight leading-tight'>
                     {HERO_DATA.name}
                 </h1>
-                <h2 className='text-xl md:text-3xl font-medium text-slate-400 mb-6'>
-                    {HERO_DATA.roles.join(" | ")}
+                
+                <h2 className='text-3xl md:text-4xl lg:text-5xl font-semibold mb-8 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400'>
+                    {HERO_DATA.roles.join(" • ")}
                 </h2>
-                <p className='text-slate-300 mb-10 max-w-lg'>
+                
+                <p className='text-slate-300 text-lg md:text-xl font-medium mb-12 max-w-xl leading-relaxed'>
                     {HERO_DATA.bio}
                 </p>
                 
-                <div className='flex gap-4 mb-10'>
-                    <a href={HERO_DATA.cvLink} className='group flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400 hover:-translate-y-1 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.25)]'>
-                        <span>Download CV</span>
-                        <Download size={18} className="group-hover:animate-bounce" />
-                    </a>
-                    <a href='#contact' className='flex items-center gap-2 px-8 py-3.5 rounded-full bg-slate-800 border border-slate-700/50 text-slate-100 font-bold hover:border-emerald-500/50 hover:bg-slate-800/80 hover:-translate-y-1 transition-all duration-300'>
-                        <span>Contact Info</span>
+                <div className='flex gap-4'>
+                    <a href={HERO_DATA.cvLink} className='group relative flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-emerald-500 text-slate-950 font-black text-lg hover:bg-emerald-400 hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] overflow-hidden'>
+                        <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+                        <span className="relative z-10 flex items-center gap-3">
+                           <Download size={24} className="group-hover:-translate-y-1 transition-transform duration-300" />
+                           Download Resume
+                        </span>
                     </a>
                 </div>
+            </div>
+
+            {/* Right Column: Image with Premium Decorators */}
+            <div className='relative flex justify-center lg:w-2/5'>
+                {/* Glowing Background Blob */}
+                <div className='absolute inset-0 bg-gradient-to-tr from-emerald-500 to-sky-500 rounded-full blur-[100px] opacity-40 flex items-center justify-center animate-pulse' style={{animationDuration: '4s'}}></div>
                 
-                <div className='flex gap-5 items-center'>
-                    <a href={HERO_DATA.githubLink} target='_blank' rel='noreferrer' className='p-3.5 rounded-full bg-slate-800/50 hover:bg-emerald-500 hover:text-slate-900 transition-all duration-300 text-slate-400 border border-slate-700/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]'>
-                        <Github size={22} />
-                    </a>
-                    <a href={HERO_DATA.linkedinLink} target='_blank' rel="noopener noreferrer" className='p-3.5 rounded-full bg-slate-800/50 hover:bg-emerald-500 hover:text-slate-900 transition-all duration-300 text-slate-400 border border-slate-700/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]'>
-                        <Linkedin size={22} />
-                    </a>
+                <div className="relative group">
+                    {/* Defaulting to a high-quality tech placeholder until you upload yours */}
+                    <img 
+                        className='relative w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] rounded-full object-cover border-4 md:border-8 border-slate-900 shadow-2xl z-20 group-hover:scale-105 transition-transform duration-700 ease-in-out' 
+                        src='https://images.unsplash.com/photo-1544256718-3bbed23ceb5c?auto=format&fit=crop&w=800&q=80' 
+                        alt={HERO_DATA.name} 
+                    />
+                    
+                    {/* Premium Floating Glassmorphism Badge */}
+                    <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-12 z-30 glass border-slate-700/50 p-4 px-6 rounded-2xl shadow-2xl flex items-center gap-4 animate-bounce hover:scale-110 transition-transform cursor-default bg-slate-900/60 backdrop-blur-xl" style={{animationDuration: '3.5s'}}>
+                        <div className="p-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full text-slate-900 shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                            <Sparkles size={20} />
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-xl font-black text-slate-100">100%</span>
+                            <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Passionate</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

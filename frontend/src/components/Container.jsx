@@ -7,6 +7,7 @@ import Experience from "./Experience"
 import About from "./About"
 import Skills from "./Skills"
 import Education from "./Education"
+import Chatbot from "./Chatbot"
 
 const Container = () => {
     return (
@@ -24,6 +25,7 @@ const Container = () => {
             </main>
             
             <Footer />
+            <Chatbot />
         </div>
     )
 }
