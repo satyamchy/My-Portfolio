@@ -1,5 +1,6 @@
 import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import React from "react";
+import { HERO_DATA } from '../data';
 
 const Contact = () => {
     return (
@@ -13,13 +14,13 @@ const Contact = () => {
                 <h2 className="text-4xl md:text-6xl font-extrabold text-slate-100 mb-8">Let's work together!</h2>
                 
                 <div className="flex flex-col md:flex-row gap-6 w-full max-w-xl justify-center mt-4 z-10">
-                    <a href="mailto:satyamkr1354@gmail.com" className="group flex flex-1 items-center justify-center gap-3 bg-emerald-500 text-slate-950 px-8 py-4 rounded-full font-bold hover:bg-emerald-400 hover:-translate-y-1 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]">
+                    <a href={`mailto:${HERO_DATA.email}`} className="group flex flex-1 items-center justify-center gap-3 bg-emerald-500 text-slate-950 px-8 py-4 rounded-full font-bold hover:bg-emerald-400 hover:-translate-y-1 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]">
                         <Mail size={22} />
                         <span>Email Me</span>
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                     
-                    <a href='https://www.linkedin.com/in/satyam1354/' target='_blank' rel="noopener noreferrer" className="flex flex-1 items-center justify-center gap-3 bg-slate-800 text-slate-100 px-8 py-4 rounded-full font-bold hover:bg-slate-700 transition-all duration-300 border border-slate-700 hover:border-emerald-500/50 hover:-translate-y-1">
+                    <a href={HERO_DATA.linkedinLink} target='_blank' rel="noopener noreferrer" className="flex flex-1 items-center justify-center gap-3 bg-slate-800 text-slate-100 px-8 py-4 rounded-full font-bold hover:bg-slate-700 transition-all duration-300 border border-slate-700 hover:border-emerald-500/50 hover:-translate-y-1">
                         <Linkedin size={22} className="text-sky-400" />
                         <span>LinkedIn</span>
                     </a>
