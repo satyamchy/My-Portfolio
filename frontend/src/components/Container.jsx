@@ -8,23 +8,20 @@ import About from "./About"
 
 const Container = () => {
     return (
-        <>
+        <div className="relative min-h-screen bg-slate-900 text-slate-50 selection:bg-emerald-500/30 font-['Outfit']">
             <Header />
-            <hr />
-            <Feed />
-            <hr className="border-t-2 border-black " />
-            <About />
-            <hr className="border-t-2 border-black " />
-            <Experience />
-            <hr className="border-t-2 border-black " />
-
-            <Projects />
-            <hr className="border-t-2 border-black " />
-
-            <Contact />
+            
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 flex flex-col gap-32">
+                <Feed />
+                <About />
+                <Experience />
+                <Projects />
+                <Contact />
+            </main>
+            
             <Footer />
-
-        </>
+        </div>
     )
 }
+
 export default Container
