@@ -1,56 +1,26 @@
 import { Code, Layout, Smartphone, Database, Server, PenTool, GitBranch, Globe, Award, Briefcase, GraduationCap, BarChart3, Cloud, Brain } from 'lucide-react';
 
 export const HERO_DATA = {
-    name: "Satyam Kumar",
-    roles: ["Software & Data Engineer"],
-    bio: "I build scalable software, dynamic user interfaces, and robust data pipelines.",
-    cvLink: "/cv.pdf",
-    githubLink: "https://www.github.com/satyamchy/",
-    linkedinLink: "https://www.linkedin.com/in/satyam1354/",
-    email: "satyamkr1354@gmail.com",
-    phone: "+91 9693342101" // Add your real phone number here!
+  name: "Satyam Kumar",
+  roles: ["Software & Data Engineer"],
+  bio: "I build scalable software, dynamic user interfaces, and robust data pipelines.",
+  cvLink: "/cv.pdf",
+  githubLink: "https://www.github.com/satyamchy/",
+  linkedinLink: "https://www.linkedin.com/in/satyam1354/",
+  email: "satyamkr1354@gmail.com",
+  phone: "+91 9693342101" 
 };
 
 export const ABOUT_DATA = {
   title: "About Me",
   description1:
-    "I’m a passionate engineer who enjoys building useful products with code and solving real-world problems through technology. My journey started with web development and gradually expanded into data engineering, cloud platforms, and AI-powered applications through hands-on projects and industry experience.",
+    "I’m a versatile engineer passionate about building impactful products across Full Stack Development, Data Engineering, AI/ML, and Cloud technologies. I enjoy turning ideas into scalable applications, intelligent systems, and data-driven solutions that solve real-world problems.",
 
   description2:
-    "I have worked on frontend and backend development using modern JavaScript frameworks, while also gaining practical exposure to tools like Snowflake, Databricks, IICS, SQL, Power BI, and AWS during my internship. I enjoy learning new technologies, creating clean solutions, and continuously improving my skills with every project I build."
+    "With hands-on industry experience at Innova Solutions, I’ve worked on ETL pipelines, Power BI analytics, Snowflake, Databricks, SQL, IICS, and AWS while also developing modern web applications using React, Node.js, FastAPI, and the MERN stack. I’m driven by continuous learning, clean engineering, and creating technology that delivers real value."
 };
 
 export const SKILLS_DATA = [
-  {
-    category: "Frontend Development",
-    icon: Layout,
-    color: "emerald",
-    skills: [
-      "React.js",
-      "JavaScript (ES6+)",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "Vite",
-      "Responsive Web Design"
-    ]
-  },
-  {
-    category: "Backend Development",
-    icon: Server,
-    color: "sky",
-    skills: [
-      "Node.js",
-      "Express.js",
-      "REST APIs",
-      "JWT Authentication",
-      "bcrypt",
-      "Multer",
-      "Cloudinary",
-      "Java",
-      "Python"
-    ]
-  },
   {
     category: "Data Engineering",
     icon: Database,
@@ -80,12 +50,44 @@ export const SKILLS_DATA = [
     ]
   },
   {
+    category: "Backend Development",
+    icon: Server,
+    color: "sky",
+    skills: [
+      "Java",
+      "Python",
+      "C++",
+      "SQL",
+      "FastAPI",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "JWT Authentication",
+      "Multer",
+      "Cloudinary"
+    ]
+  },
+  {
+    category: "Frontend Development",
+    icon: Layout,
+    color: "emerald",
+    skills: [
+      "React.js",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Vite"
+    ]
+  },
+  {
     category: "Cloud & Tools",
     icon: Cloud,
     color: "amber",
     skills: [
       "AWS",
       "Docker",
+      "Kubernetes",
       "Git",
       "GitHub",
       "Linux / Ubuntu WSL",
@@ -109,148 +111,256 @@ export const SKILLS_DATA = [
 export const EXPERIENCE_DATA = [
   {
     id: 1,
-    title: "Data Engineer Intern",
+    title: "Data Engineer",
     company: "Innova Solutions",
-    period: "2025 - 2026 (11 Months)",
+    period: "May 2025 - March 2026",
     description:
-      "Worked as a Data Engineer Intern in Hyderabad, contributing to enterprise data workflows, reporting solutions, and cloud-based analytics platforms. Gained hands-on experience in modern data engineering tools, automation, and business intelligence systems.",
+      "Worked as a Data Engineer at Innova Solutions, Hyderabad, delivering production-grade ETL pipelines, BI reporting solutions, and enterprise analytics systems for US healthcare clients. Gained strong hands-on experience in modern data engineering tools, automation platforms, cloud data warehouses, and large-scale business reporting environments.",
     projects: [
       {
         name: "Power BI Reporting Solutions",
         detail:
-          "Designed and developed interactive Power BI dashboards for business insights, KPI tracking, and performance monitoring. Improved decision-making through clear visual analytics."
+          "Designed and developed interactive Power BI dashboards for KPI tracking, business insights, claim error monitoring, and operational reporting. Enabled faster decision-making through clear and dynamic visual analytics."
       },
       {
-        name: "Data Transformation Pipelines",
+        name: "1800+ Files Data Consolidation Pipeline",
         detail:
-          "Built and optimized ETL workflows using Power Query (M Language) to clean, transform, and process business data from multiple sources."
+          "Engineered an automated Power Query (M-Code) pipeline to ingest, standardize, clean, and merge 1,800+ monthly CSV files across 60+ report schemas into a unified dataset for enterprise reporting."
       },
       {
-        name: "Power Automate Process Automation",
+        name: "Legacy SAS to SQL Migration",
         detail:
-          "Created automated workflows using Power Automate for notifications, approvals, and recurring business tasks, reducing manual operational effort."
+          "Migrated legacy SAS-based reporting processes into optimized SQL workflows, improving automation, maintainability, and reporting efficiency for healthcare data operations."
+      },
+      {
+        name: "Power Automate Workflow Automation",
+        detail:
+          "Built automated workflows using Power Automate for alerts, approvals, scheduled refresh notifications, and data quality mismatch reporting, significantly reducing manual effort."
       },
       {
         name: "Snowflake Cloud Data Warehouse",
         detail:
-          "Worked with Snowflake for data storage, querying, and warehouse management. Assisted in handling scalable cloud-based analytical workloads."
+          "Completed hands-on internal training on Snowflake including warehouse tuning, clustering keys, zero-copy cloning, time travel, tasks, streams, stored procedures, and SQL optimization for scalable cloud analytics workloads."
+      },
+      {
+        name: "IICS ETL Pipelines",
+        detail:
+          "Built practice ETL workflows using Informatica Intelligent Cloud Services (IICS) with parameterized mappings for multi-source data ingestion across cloud systems."
+      },
+      {
+        name: "dbt Transformation Layer",
+        detail:
+          "Explored dbt for creating modular SQL transformation layers on top of Snowflake, including staging models, marts, reusable transformations, and analytics-ready datasets."
       },
       {
         name: "Databricks & SQL Operations",
         detail:
-          "Used SQL and Databricks for querying datasets, data analysis, and supporting large-scale processing requirements."
+          "Used SQL and Databricks for querying datasets, supporting data analysis tasks, and handling large-scale structured data processing requirements."
       },
       {
         name: "AWS Cloud Exposure",
         detail:
-          "Gained practical exposure to AWS services for cloud infrastructure, storage, and deployment-related tasks within data workflows."
+          "Gained practical experience with AWS services such as storage and cloud infrastructure used in modern enterprise data workflows."
+      },
+      {
+        name: "Healthcare Error Analytics System",
+        detail:
+          "Built derived datasets with metrics like Claim Age, SLA, Entry Date, Completion Date, and Key IDs for monitoring Medicaid & Medicare claim processing errors across US healthcare operations."
       }
     ]
   },
   {
     id: 2,
     title: "Full Stack Developer",
-    company: "Personal Projects & Freelance",
+    company: "College Projects & Personal Development",
     period: "2023 - Present",
     description:
-      "Built modern full-stack applications with focus on scalable backend systems, responsive frontend experiences, and real-world problem solving.",
+      "Built modern full-stack applications focused on scalable backend systems, responsive frontend experiences, AI integrations, and solving real-world problems through college and self-driven projects.",
     projects: [
       {
-        name: "Skill-Link",
+        name: "NewsBucket",
         detail:
-          "Developed a job-connect platform for village workers using Node.js, Express.js, EJS, JavaScript, and MongoDB with search by zip code and service type."
+          "Built an AI-powered news platform using React.js and FastAPI with LLM integration for intelligent news interaction, smart assistance, and enhanced user engagement."
+      },
+      {
+        name: "Portfolio Website with AI Chatbot",
+        detail:
+          "Created a modern portfolio website using React and Tailwind CSS featuring an integrated AI chatbot that answers questions about skills, projects, and professional experience dynamically."
+      },
+      {
+        name: "QuantFit",
+        detail:
+          "Developed an online fitness tracker platform with workout management, progress tracking, and user-focused health features."
       },
       {
         name: "PulsePoint News",
         detail:
-          "Built a full-stack AI-powered news platform with React and Node.js featuring summarization, sentiment analysis, recommendations, and fake news detection."
+          "Developed a modern news website using the MERN stack with features such as article management, category-based browsing, responsive UI, and backend API integration."
       },
       {
-        name: "VidEssentials",
+        name: "Skill-Link",
         detail:
-          "Created a media-sharing web app using React, Express.js, bcrypt, and Cloudinary for secure authentication and media management."
+          "Built a job-connect platform for village workers using Node.js, Express.js, EJS, JavaScript, and MongoDB with search by zip code and service type."
+      },
+      {
+        name: "Twitter Clone",
+        detail:
+          "Created a social media platform inspired by Twitter using the MERN stack with features like authentication, posting updates, likes, comments, and user profiles."
       }
     ]
   }
 ];
 
 export const EDUCATION_CERTS_DATA = {
-    education: [
-        {
-            id: 1,
-            title: "Bachelor of Engineering in Computer Science",
-            institution: "Chitkara University",
-            period: "2022 - 2026",
-            description: "Graduated with honors. Coursework focused on Data Structures, Algorithms, Web Development, and Database Management."
-        },
-        {
-            id: 2,
-            title: "Trident Public School",
-            institution: "CBSE",
-            period: "2011 - 2019",
-            description: "Completed secondary education with a focus on PCM (Physics, Chemistry, Mathematics)."
-        },
-        {
-            id: 3,
-            title: "City central high school",
-            institution: "CBSE",
-            period: "2020 - 2021",
-            description: "Completed secondary education with a focus on subjects like science, social science, english, hindi and mathematics."
-        }
-    ],
-    certifications: [
-        {
-            id: 1,
-            title: "AWS Certified Developer – Associate",
-            issuer: "Amazon Web Services",
-            date: "Aug 2023",
-            link: "#"
-        },
-        {
-            id: 2,
-            title: "Advanced React Patterns",
-            issuer: "Frontend Masters",
-            date: "Feb 2023",
-            link: "#"
-        }
-    ]
+  education: [
+    {
+      id: 1,
+      title: "Bachelor of Engineering in Computer Science",
+      institution: "Chitkara University",
+      period: "Aug 2022 - June 2026",
+      description: "Graduated with honors. Coursework focused on Data Structures, Algorithms, Web Development, and Database Management."
+    },
+    {
+      id: 2,
+      title: "Trident Public School",
+      institution: "CBSE",
+      period: "April 2019 - March 2021",
+      description: "Completed secondary education with a focus on PCM (Physics, Chemistry, Mathematics)."
+    },
+    {
+      id: 3,
+      title: "City Central High School",
+      institution: "CBSE",
+      period: "July 2011 - March 2019",
+      description: "Completed secondary education with a focus on subjects like science, social science, english, hindi and mathematics."
+    }
+  ],
+  certifications: [
+    {
+      id: 1,
+      title: "IBM AI Engineering",
+      issuer: "IBM ",
+      date: "Oct 2025",
+      link: "https://coursera.org/share/6694ef8ba5f4ffd5e7e8e982eab43931"
+    },
+    {
+      id: 2,
+      title: "AI for Scientific Research",
+      issuer: "LearnQuest",
+      date: "Feb 2026",
+      link: "https://coursera.org/share/95a6e85d9f83152e674d6e5e3c4682ce"
+    },
+    {
+      id: 3,
+      title: "Software Product Management",
+      issuer: "University of Alberta",
+      date: "Feb 2026",
+      link: "https://coursera.org/share/f6ba7d917f28fc765b5398bd1b84e8f2"
+    },
+    {
+      id: 4,
+      title: "Introduction to Cybersecurity",
+      issuer: "Cisco Networking Academy",
+      date: "Nov 2023",
+      link: "https://www.credly.com/badges/c50e678c-c0c0-4a37-8fa7-8e1f35a362cf"
+    },
+    {
+      id: 5,
+      title: "Global Disaster Risk Reduction and Management Pathway",
+      issuer: "Kaya",
+      date: "Oct 2024",
+      link: "https://drive.google.com/file/d/1vqkt_LGYII0WdQVvAp5fxGBij6Tf6K7v/view "
+    }
+  ]
 };
 
 export const PROJECTS_DATA = [
-    { 
-        id: 1, 
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80", 
-        name: "Skill Link", 
-        description: "A comprehensive platform connecting freelancers with clients, featuring real-time chat and secure remote payment gateways.",
-        github: "https://github.com/shambsinha/SkillLink", 
-        live: "https://skill-link-3jtd.onrender.com/dashboard", 
-        tech: ["React", "Node.js"] 
-    },
-    { 
-        id: 2, 
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80", 
-        name: "Streamsohere Platform", 
-        description: "An advanced streaming dashboard interface that aggregates multiple live streams with low latency monitoring metrics.",
-        github: "https://github.com/shambsinha/SkillLink", 
-        live: "https://skill-link-3jtd.onrender.com/dashboard", 
-        tech: ["Next.js", "Tailwind"] 
-    },
-    { 
-        id: 3, 
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80", 
-        name: "Interactive Portfolio", 
-        description: "A dynamic, recruiter-ready developer portfolio heavily reliant on glassmorphism UI, centralized config files, and Tailwind animations.",
-        github: "https://github.com/satyamchy/", 
-        live: "https://skill-link-3jtd.onrender.com/dashboard", 
-        tech: ["React", "Vite", "Tailwind"] 
-    },
-    { 
-        id: 4, 
-        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80", 
-        name: "News Aggregator", 
-        description: "An automated bot that retrieves global headline data via RESTful APIs and curates a customized daily digest.",
-        github: "", 
-        live: "", 
-        tech: ["JavaScript", "API"] 
-    }
+  {
+    id: 1,
+    image:
+      "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=800&q=80",
+    name: "NewsBucket",
+    description:
+      "An AI-powered news platform built with React.js and FastAPI featuring LLM integration for smart news interaction, intelligent assistance, and engaging user experiences.",
+    github: "https://github.com/satyamchy/NewsBucket",
+    live: "https://news-bucket-omega.vercel.app/",
+    tech: ["React", "FastAPI", "Python", "LLM"]
+  },
+  {
+    id: 2,
+    image:
+      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80",
+    name: "Portfolio Website with AI Chatbot",
+    description:
+      "A modern portfolio website built with React and Tailwind CSS featuring an AI chatbot that dynamically answers questions about skills, projects, and experience.",
+    github: "https://github.com/satyamchy/My-Portfolio",
+    live: "https://satyam-portfolio-xi.vercel.app/",
+    tech: ["React", "Tailwind", "Vite", "AI Chatbot"]
+  },
+  {
+    id: 3,
+    image:
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80",
+    name: "QuantFit",
+    description:
+      "An online fitness tracker platform with workout planning, progress monitoring, and user-focused health management features.",
+    github: "https://github.com/adisrc/quantum-fit",
+    live: "https://quantfit.vercel.app/",
+    tech: ["React", "Node.js", "Express", "Tailwind", "MongoDB"]
+  },
+
+  // Demo / Sample Projects
+  {
+    id: 4,
+    image:
+      "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80",
+    name: "PulsePoint News",
+    description:
+      "A MERN stack news website with article management, category browsing, responsive design, and backend API integration.",
+    github: "https://github.com/satyamchy/Pulse-Point",
+    live: "",
+    tech: ["MongoDB", "Express", "React", "Tailwind", "Node.js"]
+  },
+  {
+    id: 5,
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+    name: "Skill-Link",
+    description:
+      "A platform connecting village workers with clients using search by zip code and service type for easier local job discovery.",
+    github: "https://github.com/shambsinha/SkillLink",
+    live: "https://skill-link-3jtd.onrender.com/dashboard",
+    tech: ["Node.js", "Express", "MongoDB", "EJS"]
+  },
+  {
+    id: 6,
+    image:
+      "https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=800&q=80",
+    name: "Twitter Clone",
+    description:
+      "A social media platform inspired by Twitter featuring authentication, posting updates, likes, comments, and user profiles.",
+    github: "https://github.com/satyamchy/Twitter-Clone",
+    live: "",
+    tech: ["MongoDB", "Express", "React", "Node.js"]
+  }
 ];
+
+
+export const ADDITIONAL_INFO = [
+  {
+    title: "Personal Life",
+    content:
+      "Satyam met his girlfriend Bhumika during the first month at Innova Solutions, and since then they have been in a relationship. She is highly talented, intelligent, knowledgeable, and exceptionally skilled in coding. Bhumika is very focused and dedicated in every task she takes on, whether professional or personal."
+  },
+  {
+    title: "Relationship Reality",
+    content:
+      "Satyam often feels that he gives more love, time, and effort in the relationship, while Bhumika does not always give him the same level of attention or emotional response."
+  },
+  {
+    title: "Fun Fact",
+    content:
+      "Bhumika once became jealous of Disha Sharma after Satyam mentioned that Disha was 'kantap' (gorgeous)."
+  }
+];
+

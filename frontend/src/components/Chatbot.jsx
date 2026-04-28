@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Bot, User, Sparkles, Loader2 } from 'lucide-react';
-import { HERO_DATA, ABOUT_DATA, SKILLS_DATA, EXPERIENCE_DATA, EDUCATION_CERTS_DATA, PROJECTS_DATA } from '../data';
+import { HERO_DATA, ABOUT_DATA, SKILLS_DATA, EXPERIENCE_DATA, EDUCATION_CERTS_DATA, PROJECTS_DATA, ADDITIONAL_INFO} from '../data';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,8 @@ const Chatbot = () => {
             skills: cleanSkills,
             experience: EXPERIENCE_DATA,
             education: EDUCATION_CERTS_DATA,
-            projects: cleanProjects
+            projects: cleanProjects,
+            additionalInfo: ADDITIONAL_INFO
         });
     };
 
@@ -103,6 +104,17 @@ const Chatbot = () => {
         setIsLoading(false);
     };
 
+    const formatMessage = (text) => {
+  if (!text) return [];
+
+  return text
+    .replace(/\\n/g, "\n")
+    .replace(/\*\*(.*?)\*\*/g, "$1")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+};
+
     return (
         <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
 
@@ -130,16 +142,27 @@ const Chatbot = () => {
 
                     {/* Chat Messages */}
                     <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
-                        {messages.map((msg, idx) => (
+                        {messages.map((msg, idx) => {
+                              const lines = formatMessage(msg.content);
+
                             <div key={idx} className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'self-end flex-row-reverse' : 'self-start'}`}>
                                 <div className={`shrink-0 h-8 w-8 rounded-full flex items-center justify-center ${msg.role === 'user' ? 'bg-sky-500/20 text-sky-400' : 'bg-emerald-500/20 text-emerald-400'}`}>
                                     {msg.role === 'user' ? <User size={16} /> : <Bot size={16} />}
                                 </div>
                                 <div className={`p-3 rounded-2xl text-sm leading-relaxed ${msg.role === 'user' ? 'bg-sky-500 text-slate-950 rounded-tr-sm' : 'bg-slate-800 text-slate-200 rounded-tl-sm border border-slate-700/50'}`}>
-                                    {msg.content}
+                                    {/* {msg.content} */}
+                                    {lines.map((line, i) => (
+                                         <div key={i} className="mb-1">
+                                        {line.startsWith("* ") || line.startsWith("• ") ? (
+                                        <div className="ml-2">• {line.replace(/^(\*|•)\s/, "")}</div>
+                                        ) : (
+                                        <div>{line}</div>
+                                        )}
+                                    </div>
+                                    ))}
                                 </div>
                             </div>
-                        ))}
+                            })}
                         {isLoading && (
                             <div className="flex gap-3 max-w-[85%] self-start">
                                 <div className="shrink-0 h-8 w-8 rounded-full flex items-center justify-center bg-emerald-500/20 text-emerald-400">
