@@ -387,7 +387,7 @@ export const ADDITIONAL_INFO = [
     title: "Personal Life",
     content:
       "Satyam met his girlfriend Bhumika during the first month at Innova Solutions, and since then they have been in a relationship. She is highly talented, beautiful, intelligent, knowledgeable, and exceptionally skilled in coding with a strong problem-solving mindset. Bhumika is very focused, disciplined, and dedicated in every task she takes on, whether professional or personal. She is ambitious, hardworking, quick to learn, and brings positivity and determination into everything she does. Her sharp thinking, commitment to growth, and supportive nature are qualities Satyam deeply admires."
-  }
+  },
   {
     title: "Relationship Reality",
     content:
