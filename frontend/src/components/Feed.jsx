@@ -1,5 +1,5 @@
 import React from 'react'
-import { Download, Sparkles, ChevronDown } from 'lucide-react';
+import { Download, ChevronDown, Sparkles, Briefcase, MapPin } from "lucide-react";
 import { HERO_DATA } from '../data';
 
 const Feed = () => {
@@ -15,8 +15,13 @@ const Feed = () => {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></span>
                     </span>
-                    <span className="text-emerald-400 text-xs md:text-sm font-bold uppercase tracking-widest">Available for opportunities</span>
+                    <span className="text-emerald-400 text-xs md:text-sm font-bold uppercase tracking-widest">{HERO_DATA.availability}</span>
                 </div>
+
+                {/* Greeting */}
+                <p className="text-slate-400 text-sm md:text-base mb-3 tracking-wider uppercase">
+                Hello, I'm
+                </p>
 
                 <h1 className='text-5xl md:text-7xl lg:text-8xl font-black mb-4 pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-100 via-slate-300 to-slate-500 tracking-tight leading-tight'>
                     {HERO_DATA.name}
@@ -29,6 +34,24 @@ const Feed = () => {
                 <p className='text-slate-300 text-lg md:text-xl font-medium mb-12 max-w-xl leading-relaxed'>
                     {HERO_DATA.bio}
                 </p>
+                
+                    {/* Quick Stats */}
+                {/* <div className="mt-2 flex flex-wrap justify-center lg:justify-start gap-3">
+                    <div className="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-sm text-slate-300 flex items-center gap-2">
+                        <Briefcase size={16} className="text-emerald-400" />
+                        11 Months Industry Experience
+                    </div>
+
+                    <div className="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-sm text-slate-300 flex items-center gap-2">
+                        <Sparkles size={16} className="text-sky-400" />
+                        Full Stack + Data + AI
+                    </div>
+
+                    <div className="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-sm text-slate-300 flex items-center gap-2">
+                        <MapPin size={16} className="text-pink-400" />
+                        Gurugram, India
+                    </div>
+                </div> */}
                 
                 <div className='flex flex-wrap gap-4 z-50'>
                     <div className="relative group inline-block z-50">
@@ -53,7 +76,7 @@ const Feed = () => {
                             </div>
                         </div>
                     </div>
-                    
+                    {/* LinkedIn */}
                     <a href={HERO_DATA.linkedinLink} target="_blank" rel="noopener noreferrer" className='group relative flex items-center justify-center gap-3 px-6 py-4 rounded-full bg-slate-800 text-emerald-400 font-black text-sm md:text-base hover:bg-slate-700 hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.3)] border border-slate-700/50 overflow-hidden'>
                         <span className="relative z-10 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin group-hover:scale-110 transition-transform duration-300"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>

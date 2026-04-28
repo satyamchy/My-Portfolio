@@ -1,9 +1,12 @@
 import { Code, Layout, Smartphone, Database, Server, PenTool, GitBranch, Globe, Award, Briefcase, GraduationCap, BarChart3, Cloud, Brain } from 'lucide-react';
 
 export const HERO_DATA = {
+  availability: "Open to Opportunities",
   name: "Satyam Kumar",
   roles: ["Building Scalable Data & Web Solutions"],
-  bio: "Data Engineer with hands-on experience in Snowflake, Power BI, ETL, MERN Stack, and AI-powered applications.",
+  //  roles: ["Data Engineer","Full Stack Developer", "AI Builder"],
+  // bio: "Data Engineer with hands-on experience in Snowflake, Power BI, ETL, MERN Stack, and AI-powered applications.",
+  bio: "Hands-on experience in Snowflake, Power BI, ETL pipelines, MERN Stack, and AI-powered applications. Focused on building scalable systems, modern web products, and data pipelines.",
   resumes: [
     { label: "Data Engineer CV", link: "/data_engineer_cv.pdf" },
     { label: "Software Engineer CV", link: "/software_engineer_cv.pdf" }
@@ -13,7 +16,9 @@ export const HERO_DATA = {
   email: "satyamkr1354@gmail.com",
   phone: "+91 9693342101",
   leetcodeLink: "https://leetcode.com/u/satyachoudhary/",
-  image: "https://avatars.githubusercontent.com/u/154831998?s=400&u=deb04cbce57db2231d3f739e63a7ecae04f868df&v=4" // Add your specific URL here or keep empty to use the Feed's default placeholder
+  image: "https://avatars.githubusercontent.com/u/154831998?s=400&u=5583735495ebb450c49c7507a1b90e01fa3dccc7&v=4",
+  badge: "11 Months Industry Experience",
+  topTech: ["Snowflake", "React", "Node.js", "AWS", "Power BI", "SQL", "Python"]
 };
 
 export const ABOUT_DATA = {
@@ -120,7 +125,7 @@ export const EXPERIENCE_DATA = [
     company: "Innova Solutions",
     period: "May 2025 - March 2026",
     description:
-      "Worked as a Data Engineer at Innova Solutions, Hyderabad, delivering production-grade ETL pipelines, BI reporting solutions, and enterprise analytics systems for US healthcare clients. Gained strong hands-on experience in modern data engineering tools, automation platforms, cloud data warehouses, and large-scale business reporting environments.",
+      "Worked as a Data Engineer Intern at Innova Solutions, Hyderabad, delivering production-grade ETL pipelines, BI reporting solutions, and enterprise analytics systems for US healthcare clients. Gained strong hands-on experience in modern data engineering tools, automation platforms, cloud data warehouses, and large-scale business reporting environments.",
     projects: [
       {
         name: "Power BI Reporting Solutions",
