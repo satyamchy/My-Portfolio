@@ -2,13 +2,18 @@ import { Code, Layout, Smartphone, Database, Server, PenTool, GitBranch, Globe, 
 
 export const HERO_DATA = {
   name: "Satyam Kumar",
-  roles: ["Software & Data Engineer"],
-  bio: "I build scalable software, dynamic user interfaces, and robust data pipelines.",
-  cvLink: "/cv.pdf",
+  roles: ["Building Scalable Data & Web Solutions"],
+  bio: "Data Engineer with hands-on experience in Snowflake, Power BI, ETL, MERN Stack, and AI-powered applications.",
+  resumes: [
+    { label: "Data Engineer CV", link: "/data_engineer_cv.pdf" },
+    { label: "Software Engineer CV", link: "/software_engineer_cv.pdf" }
+  ],
   githubLink: "https://www.github.com/satyamchy/",
   linkedinLink: "https://www.linkedin.com/in/satyam1354/",
   email: "satyamkr1354@gmail.com",
-  phone: "+91 9693342101" 
+  phone: "+91 9693342101",
+  leetcodeLink: "https://leetcode.com/u/satyachoudhary/",
+  image: "https://avatars.githubusercontent.com/u/154831998?s=400&u=5583735495ebb450c49c7507a1b90e01fa3dccc7&v=4" // Add your specific URL here or keep empty to use the Feed's default placeholder
 };
 
 export const ABOUT_DATA = {
@@ -239,7 +244,7 @@ export const EDUCATION_CERTS_DATA = {
     {
       id: 1,
       title: "IBM AI Engineering",
-      issuer: "IBM ",
+      issuer: "IBM",
       date: "Oct 2025",
       link: "https://coursera.org/share/6694ef8ba5f4ffd5e7e8e982eab43931"
     },
