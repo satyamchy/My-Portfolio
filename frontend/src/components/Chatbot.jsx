@@ -61,16 +61,35 @@ const Chatbot = () => {
                 })
             });
 
-            if (!response.ok) {
-                throw new Error("Backend not responding correctly.");
-            }
+            // if (!response.ok) {
+            //     throw new Error("Backend not responding correctly.");
+            // }
+              if (!response.ok) {
+        // Capture backend status error
+        throw new Error(
+            `Backend responded with status ${response.status} ${response.statusText}`
+        );
+    }
 
             const data = await response.json();
+            console.log("Chatbot Response:", data);
             setMessages((prev) => [...prev, { role: 'ai', content: data.reply }]);
 
         } catch (error) {
             console.error("Chatbot Error:", error);
             // Fallback mock response for testing before backend is fully integrated
+             let errorMessage = "My backend connection is currently unavailable.";
+
+            // More realistic user-facing messages
+            if (error.message.includes("Failed to fetch")) {
+                errorMessage =
+                    "Unable to connect to backend server. It may be sleeping or not started yet. Free hosting instances often take 30–60 seconds to wake up.";
+            } else if (error.message.includes("status")) {
+                errorMessage = error.message;
+            } else {
+                errorMessage = `Unexpected error: ${error.message}`;
+            }
+
             setTimeout(() => {
                 setMessages((prev) => [...prev, {
                     role: 'ai',
