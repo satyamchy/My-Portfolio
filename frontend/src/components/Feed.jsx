@@ -76,16 +76,7 @@ const Feed = () => {
                         alt={HERO_DATA.name} 
                     />
                     
-                    {/* Premium Floating Glassmorphism Badge */}
-                    <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-12 z-30 glass border-slate-700/50 p-4 px-6 rounded-2xl shadow-2xl flex items-center gap-4 animate-bounce hover:scale-110 transition-transform cursor-default bg-slate-900/60 backdrop-blur-xl" style={{animationDuration: '3.5s'}}>
-                        <div className="p-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full text-slate-900 shadow-[0_0_15px_rgba(16,185,129,0.5)]">
-                            <Sparkles size={20} />
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-xl font-black text-slate-100">100%</span>
-                            <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Passionate</span>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>

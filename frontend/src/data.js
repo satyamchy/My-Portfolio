@@ -13,7 +13,7 @@ export const HERO_DATA = {
   email: "satyamkr1354@gmail.com",
   phone: "+91 9693342101",
   leetcodeLink: "https://leetcode.com/u/satyachoudhary/",
-  image: "https://avatars.githubusercontent.com/u/154831998?s=400&u=5583735495ebb450c49c7507a1b90e01fa3dccc7&v=4" // Add your specific URL here or keep empty to use the Feed's default placeholder
+  image: "https://avatars.githubusercontent.com/u/154831998?s=400&u=deb04cbce57db2231d3f739e63a7ecae04f868df&v=4" // Add your specific URL here or keep empty to use the Feed's default placeholder
 };
 
 export const ABOUT_DATA = {
@@ -289,7 +289,7 @@ export const PROJECTS_DATA = [
       "An AI-powered news platform built with React.js and FastAPI featuring LLM integration for smart news interaction, intelligent assistance, and engaging user experiences.",
     github: "https://github.com/satyamchy/NewsBucket",
     live: "https://news-bucket-omega.vercel.app/",
-    tech: ["React", "FastAPI", "Python", "LLM"]
+    tech: ["React", "FastAPI", "Python", "LLM", "Web Search"]
   },
   {
     id: 2,
@@ -300,7 +300,7 @@ export const PROJECTS_DATA = [
       "A modern portfolio website built with React and Tailwind CSS featuring an AI chatbot that dynamically answers questions about skills, projects, and experience.",
     github: "https://github.com/satyamchy/My-Portfolio",
     live: "https://satyam-portfolio-xi.vercel.app/",
-    tech: ["React", "Tailwind", "Vite", "AI Chatbot"]
+    tech: ["React", "Tailwind", "Vite", "AI Chatbot", "FastAPI", "LLM"]
   },
   {
     id: 3,
@@ -311,7 +311,7 @@ export const PROJECTS_DATA = [
       "An online fitness tracker platform with workout planning, progress monitoring, and user-focused health management features.",
     github: "https://github.com/adisrc/quantum-fit",
     live: "https://quantfit.vercel.app/",
-    tech: ["React", "Node.js", "Express", "Tailwind", "MongoDB"]
+    tech: ["React", "Node.js", "Express", "Tailwind", "MongoDB", "PoseNet"]
   },
 
   // Demo / Sample Projects
@@ -351,12 +351,43 @@ export const PROJECTS_DATA = [
 ];
 
 
+
 export const ADDITIONAL_INFO = [
+  {
+    title: "Professional Interests",
+    content:
+      "Satyam is deeply interested in Artificial Intelligence, Large Language Models (LLMs), Data Engineering, Cloud Systems, and Full Stack Development. He enjoys building products that combine intelligent automation with practical real-world use cases."
+  },
+  {
+    title: "Learning Mindset",
+    content:
+      "He is highly curious about emerging technologies and continuously upgrades his skills through hands-on projects, certifications, experimentation, and self-learning. He adapts quickly to new tools, frameworks, and evolving industry trends."
+  },
+  {
+    title: "Problem Solving Philosophy",
+    content:
+      "Satyam believes in learning by building. His approach focuses on creating clean, scalable, and impactful solutions rather than only studying theory. He values consistency, ownership, and practical execution."
+  },
+  {
+    title: "Career Motivation",
+    content:
+      "He is motivated to work in environments where he can solve meaningful problems, contribute to strong engineering teams, and grow across software, data, and AI domains."
+  },
+  {
+    title: "Location Background",
+    content:
+      "Originally from Bihar, Satyam has professional work exposure in Hyderabad and is currently living in Gurugram, India."
+  },
+  {
+    title: "Work Style",
+    content:
+      "He is known for being focused, disciplined, and determined when working on technical goals. Once committed to a task, he prefers finishing it with quality and ownership."
+  },
   {
     title: "Personal Life",
     content:
-      "Satyam met his girlfriend Bhumika during the first month at Innova Solutions, and since then they have been in a relationship. She is highly talented, intelligent, knowledgeable, and exceptionally skilled in coding. Bhumika is very focused and dedicated in every task she takes on, whether professional or personal."
-  },
+      "Satyam met his girlfriend Bhumika during the first month at Innova Solutions, and since then they have been in a relationship. She is highly talented, beautiful, intelligent, knowledgeable, and exceptionally skilled in coding with a strong problem-solving mindset. Bhumika is very focused, disciplined, and dedicated in every task she takes on, whether professional or personal. She is ambitious, hardworking, quick to learn, and brings positivity and determination into everything she does. Her sharp thinking, commitment to growth, and supportive nature are qualities Satyam deeply admires."
+  }
   {
     title: "Relationship Reality",
     content:
