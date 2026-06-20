@@ -3,13 +3,12 @@ import { Code, Layout, Smartphone, Database, Server, PenTool, GitBranch, Globe, 
 export const HERO_DATA = {
   availability: "Open to Opportunities",
   name: "Satyam Kumar",
-  roles: ["Building Scalable Data & Web Solutions"],
+  roles: ["Building Scalable Web & AI Agentic Systems"],
   //  roles: ["Data Engineer","Full Stack Developer", "AI Builder"],
-  // bio: "Data Engineer with hands-on experience in Snowflake, Power BI, ETL, MERN Stack, and AI-powered applications.",
-  bio: "Hands-on experience in Snowflake, Power BI, ETL pipelines, MERN Stack, and AI-powered applications. Focused on building scalable systems, modern web products, and data pipelines.",
+//bio: "Software engineer building scalable web systems and AI applications using MERN stack, with experience in Snowflake, ETL pipelines, and Power BI for data engineering and analytics.",
+bio:"Software Engineer building scalable full-stack and AI-powered applications using FastAPI, LangChain, ChromaDB, PostgreSQL, React, MERN stack, and REST APIs with a focus on production-grade system design.",
   resumes: [
-    { label: "Data Engineer CV", link: "/data_engineer_cv.pdf" },
-    { label: "Software Engineer CV", link: "/software_engineer_cv.pdf" }
+    { label: "Software Engineer Resume", link: "/Software_Engineer_Resume.pdf" }
   ],
   githubLink: "https://www.github.com/satyamchy/",
   linkedinLink: "https://www.linkedin.com/in/satyam1354/",
@@ -23,47 +22,20 @@ export const HERO_DATA = {
 
 export const ABOUT_DATA = {
   title: "About Me",
-  description1:
-    "I’m a versatile engineer passionate about building impactful products across Full Stack Development, Data Engineering, AI/ML, and Cloud technologies. I enjoy turning ideas into scalable applications, intelligent systems, and data-driven solutions that solve real-world problems.",
+  description1: "Software Engineer with 1+ year of experience building and shipping AI-powered products and full-stack applications in production. At Xornor Technology, I engineer LLM-driven workflows, REST APIs, and scalable backend services across real user-facing products. Earlier, at Innova Solutions, I built automated data pipelines processing enterprise-scale healthcare data for a Fortune 25 US client. Core stack: Python · React · Node.js · FastAPI · AI Agents· LangChain · PostgreSQL · AWS. ",
+  description2: "Seeking a Software Engineer or AI Engineer role where I can build intelligent, scalable systems from the ground up"
 
-  description2:
-    "With hands-on industry experience at Innova Solutions, I’ve worked on ETL pipelines, Power BI analytics, Snowflake, Databricks, SQL, IICS, and AWS while also developing modern web applications using React, Node.js, FastAPI, and the MERN stack. I’m driven by continuous learning, clean engineering, and creating technology that delivers real value."
+  // description2:
+  //   "With hands-on industry experience at Innova Solutions, I’ve worked on ETL pipelines, Power BI analytics, Snowflake, Databricks, SQL, IICS, and AWS while also developing modern web applications using React, Node.js, FastAPI, and the MERN stack. I’m driven by continuous learning, clean engineering, and creating technology that delivers real value."
 };
 
 export const SKILLS_DATA = [
-  {
-    category: "Data Engineering",
-    icon: Database,
-    color: "violet",
-    skills: [
-      "SQL",
-      "Snowflake",
-      "Databricks",
-      "IICS",
-      "dbt",
-      "ETL Pipelines",
-      "Data Transformation",
-      "Power Query (M Language)",
-      "Data Warehousing"
-    ]
-  },
-  {
-    category: "Analytics & BI",
-    icon: BarChart3,
-    color: "cyan",
-    skills: [
-      "Power BI",
-      "Dashboard Development",
-      "Power Automate",
-      "Reporting Automation",
-      "Data Visualization"
-    ]
-  },
+
   {
     category: "Backend Development",
     icon: Server,
     color: "sky",
-    skills: [
+    "skills": [
       "Java",
       "Python",
       "C++",
@@ -74,14 +46,38 @@ export const SKILLS_DATA = [
       "REST APIs",
       "JWT Authentication",
       "Multer",
-      "Cloudinary"
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Socket.IO",
+      "WebSockets",
+      "S3 Buckets",
     ]
   },
   {
-    category: "Frontend Development",
+    category: "AI / ML (Learning & Projects)",
+    icon: Brain,
+    color: "rose",
+    "skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Deep Learning",
+      "NLP Basics",
+      "Model Integration",
+      "LangChain",
+      "AI Agents",
+      "LLM Applications",
+      "RAG Systems",
+      "ChromaDB",
+      "Fine-tuning",
+    ]
+  },
+  {
+    "category": "Frontend Development",
     icon: Layout,
     color: "emerald",
-    skills: [
+    "skills": [
       "React.js",
       "JavaScript (ES6+)",
       "HTML5",
@@ -101,31 +97,79 @@ export const SKILLS_DATA = [
       "Git",
       "GitHub",
       "Linux / Ubuntu WSL",
-      "Postman"
+      "Postman",
+      "VS Code",
+      "Jira",
+      "Cursor"
     ]
   },
   {
-    category: "AI / ML (Learning & Projects)",
-    icon: Brain,
-    color: "rose",
+    category: "Data Engineering & Analytics",
+    icon: Database,
+    color: "violet",
     skills: [
-      "PyTorch",
-      "Machine Learning",
-      "Deep Learning",
-      "NLP Basics",
-      "Model Integration"
+      "SQL",
+      "Snowflake",
+      "Databricks",
+      "IICS",
+      "dbt",
+      "ETL Pipelines",
+      "Data Transformation",
+      "Power Query (M Language)",
+      "Data Warehousing",
+      "Power BI",
+      "Power Automate",
+      "Reporting Automation",
+      "Data Visualization"
     ]
   }
 ];
 
 export const EXPERIENCE_DATA = [
   {
+    "id": 3,
+    "title": "Software Engineer & AI Agents Engineer",
+    "company": "Xornor Technologies",
+    "period": "April 2026 - Present",
+    "description": "Working as a Software Engineer & AI Agents Engineer, building enterprise-scale web applications, AI-powered automation systems, intelligent workflows, and data-driven platforms. Contributing across full-stack development, backend architecture, AI integration, workflow automation, and scalable cloud-based solutions.",
+    "projects": [
+      {
+        "name": "Jira Worklog Performance Tracker",
+        "detail": "Developed and deployed a full-stack Jira Worklog Performance Tracker using React, Node.js, Express, PostgreSQL, Jira REST APIs, LangChain, OpenAI, and AWS. Automated worklog ingestion, project synchronization, and performance analytics for engineering teams and managers."
+      },
+      {
+        "name": "Performance Analytics & Reporting Dashboard",
+        "detail": "Built interactive dashboards and reporting systems to analyze productivity trends, resource utilization, project progress, and work allocation, replacing manual spreadsheet-based tracking with real-time analytics and actionable insights."
+      },
+      {
+        "name": "AI-Powered Worklog Intelligence",
+        "detail": "Designed AI-driven workflows using LangChain and OpenAI to analyze, classify, and summarize Jira worklog comments, automatically identifying suspicious entries, anomalies, and generating performance recommendations."
+      },
+      {
+        "name": "Automated Data Synchronization Pipelines",
+        "detail": "Implemented scalable data pipelines and scheduled automation jobs for continuous synchronization, intelligent worklog processing, and reporting across large numbers of projects, teams, and users."
+      },
+      {
+        "name": "KAI-LMS (AI-Powered Global Learning Management Platform)",
+        "detail": "Contributed to the development of a large-scale Learning Management System supporting students, instructors, and administrators with course management, assignments, discussions, announcements, grading, and academic performance tracking."
+      },
+      {
+        "name": "AI-Based Assignment Evaluation Engine",
+        "detail": "Developed AI-powered assessment workflows that evaluate student submissions using configurable rubric-based grading criteria, generate personalized feedback, assist educators in grading, and improve consistency in evaluation processes."
+      },
+      {
+        "name": "Academic Workflow & Learning Services",
+        "detail": "Engineered scalable backend services, APIs, and full-stack features supporting course delivery, assignment lifecycle management, student progress tracking, academic reporting, and personalized learning experiences."
+      }
+    ]
+  },
+  {
     id: 1,
-    title: "Data Engineer",
+    title: "Software Engineer",
     company: "Innova Solutions",
     period: "May 2025 - March 2026",
     description:
-      "Worked as a Data Engineer Intern at Innova Solutions, Hyderabad, delivering production-grade ETL pipelines, BI reporting solutions, and enterprise analytics systems for US healthcare clients. Gained strong hands-on experience in modern data engineering tools, automation platforms, cloud data warehouses, and large-scale business reporting environments.",
+      "Worked as a Software Engineer Intern at Innova Solutions, Hyderabad, delivering production-grade ETL pipelines, BI reporting solutions, and enterprise analytics systems for US healthcare clients. Gained strong hands-on experience in modern data engineering tools, automation platforms, cloud data warehouses, and large-scale business reporting environments.",
     projects: [
       {
         name: "Power BI Reporting Solutions",
@@ -166,8 +210,7 @@ export const EXPERIENCE_DATA = [
         name: "Databricks & SQL Operations",
         detail:
           "Used SQL and Databricks for querying datasets, supporting data analysis tasks, and handling large-scale structured data processing requirements."
-      },
-      {
+      }, {
         name: "AWS Cloud Exposure",
         detail:
           "Gained practical experience with AWS services such as storage and cloud infrastructure used in modern enterprise data workflows."
@@ -228,7 +271,7 @@ export const EDUCATION_CERTS_DATA = {
       title: "Bachelor of Engineering in Computer Science",
       institution: "Chitkara University",
       period: "Aug 2022 - June 2026",
-      description: "Graduated with honors. Coursework focused on Data Structures, Algorithms, Web Development, and Database Management."
+      description: "Graduated with 9.54 CPGA without any backlog in any of the semesters. Coursework focused on Data Structures, Algorithms, Web Development, and Database Management."
     },
     {
       id: 2,
@@ -246,6 +289,13 @@ export const EDUCATION_CERTS_DATA = {
     }
   ],
   certifications: [
+    {
+      "id": 11,
+      "title": "Internship Certificate - Software Engineering",
+      "issuer": "Innova Solutions",
+      "date": "March 2026",
+      "link": "https://drive.google.com/file/d/1lFuYnXRkqd1wql44t8UT_hID6jlIMbxV/view?usp=drive_link"
+    },
     {
       id: 1,
       title: "IBM AI Engineering",

@@ -1,18 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Bot, User, Sparkles, Loader2 } from 'lucide-react';
-import { HERO_DATA, ABOUT_DATA, SKILLS_DATA, EXPERIENCE_DATA, EDUCATION_CERTS_DATA, PROJECTS_DATA, ADDITIONAL_INFO} from '../data';
+import { useEffect, useRef, useState } from 'react';
+import { Bot, Loader2, MessageSquare, Send, Sparkles, User, X } from 'lucide-react';
+import { HERO_DATA, ABOUT_DATA, SKILLS_DATA, EXPERIENCE_DATA, EDUCATION_CERTS_DATA, PROJECTS_DATA, ADDITIONAL_INFO } from '../data';
+//import { retrieveRelevantPortfolioContext } from '../lib/portfolioVectorStore';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
-        { role: 'ai', content: `Hello! I am ${HERO_DATA.name.split(" ")[0]}'s AI Assistant. Ask me anything about his skills, experience, or projects to see if he's a fit for your role!` }
+        { role: 'ai', content: `Hello! I am ${HERO_DATA.name.split(' ')[0]}'s AI Assistant. Ask me anything about his skills, experience, or projects to see if he's a fit for your role!` }
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef(null);
 
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
     useEffect(() => {
@@ -22,20 +23,20 @@ const Chatbot = () => {
     }, [messages, isOpen]);
 
     // Strips out non-useful or circular data before sending to the backend
-    const getCleanContext = () => {
-        const cleanSkills = SKILLS_DATA.map(({ icon, color, ...rest }) => rest);
-        const cleanProjects = PROJECTS_DATA.map(({ image, ...rest }) => rest);
+    // const getCleanContext = () => {
+    //     const cleanSkills = SKILLS_DATA.map(({ icon, color, ...rest }) => rest);
+    //     const cleanProjects = PROJECTS_DATA.map(({ image, ...rest }) => rest);
 
-        return JSON.stringify({
-            portfolio_owner: HERO_DATA,
-            about: ABOUT_DATA,
-            skills: cleanSkills,
-            experience: EXPERIENCE_DATA,
-            education: EDUCATION_CERTS_DATA,
-            projects: cleanProjects,
-            additionalInfo: ADDITIONAL_INFO
-        });
-    };
+    //     return JSON.stringify({
+    //         portfolio_owner: HERO_DATA,
+    //         about: ABOUT_DATA,
+    //         skills: cleanSkills,
+    //         experience: EXPERIENCE_DATA,
+    //         education: EDUCATION_CERTS_DATA,
+    //         projects: cleanProjects,
+    //         additionalInfo: ADDITIONAL_INFO
+    //     });
+    // };
 
     const handleSend = async (e) => {
         e?.preventDefault();
@@ -44,48 +45,51 @@ const Chatbot = () => {
         const userMsg = input.trim();
         setInput('');
         const newMessages = [...messages, { role: 'user', content: userMsg }];
+        // const portfolioContext = retrieveRelevantPortfolioContext(userMsg);
+
+
         setMessages(newMessages);
         setIsLoading(true);
 
         try {
-            // Replace this specific URL with your actual backend URL or use import.meta.env.VITE_API_URL
             const API_URL = import.meta.env.VITE_AI_API_URL || 'http://127.0.0.1:8000/api';
 
-            // We use a try-catch for the fetch in case the backend isn't set up yet.
-            const response = await fetch(API_URL + '/chat', {
+            // const response = await fetch(`${API_URL}/chat`, {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({
+            //         message: userMsg,
+            //         history: newMessages.slice(-8),
+            //         portfolioContext: getCleanContext()
+            //         //  portfolioContext.contextText,
+            //         // contextSources: portfolioContext.matches
+            //     })
+            // });
+            const response = await fetch(`${API_URL}/messages/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     message: userMsg,
-                    history: newMessages,
-                    portfolioContext: getCleanContext()
+                    history: newMessages.slice(-8),
                 })
             });
 
-            // if (!response.ok) {
-            //     throw new Error("Backend not responding correctly.");
-            // }
-              if (!response.ok) {
-        // Capture backend status error
-        throw new Error(
-            `Backend responded with status ${response.status} ${response.statusText}`
-        );
-    }
+            if (!response.ok) {
+                throw new Error(`Backend responded with status ${response.status} ${response.statusText}`);
+            }
 
             const data = await response.json();
             console.log("Chatbot Response:", data);
             setMessages((prev) => [...prev, { role: 'ai', content: data.reply }]);
-
         } catch (error) {
-            console.error("Chatbot Error:", error);
-            // Fallback mock response for testing before backend is fully integrated
-             let errorMessage = "My backend connection is currently unavailable.";
+            console.error('Chatbot Error:', error);
 
-            // More realistic user-facing messages
-            if (error.message.includes("Failed to fetch")) {
+            let errorMessage = 'My backend connection is currently unavailable.';
+
+            if (error.message.includes('Failed to fetch')) {
                 errorMessage =
-                    "Unable to connect to backend server. It may be sleeping or not started yet. Free hosting instances often take 30–60 seconds to wake up.";
-            } else if (error.message.includes("status")) {
+                    'Unable to connect to backend server. It may be sleeping or not started yet. Free hosting instances often take 30-60 seconds to wake up.';
+            } else if (error.message.includes('status')) {
                 errorMessage = error.message;
             } else {
                 errorMessage = `Unexpected error: ${error.message}`;
@@ -94,34 +98,32 @@ const Chatbot = () => {
             setTimeout(() => {
                 setMessages((prev) => [...prev, {
                     role: 'ai',
-                    content: "My backend connection is currently being set up! Once connected, I will read all of Satyam's data to answer your question perfectly."
+                    content: errorMessage
                 }]);
                 setIsLoading(false);
             }, 1000);
-            return; // prevent setting isLoading false twice
+            return;
         }
 
         setIsLoading(false);
     };
 
     const formatMessage = (text) => {
-  if (!text) return [];
+        if (!text) return [];
 
-  return text
-    .replace(/\\n/g, "\n")
-    .replace(/\*\*(.*?)\*\*/g, "$1")
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
-};
+        return text
+            .replace(/\\n/g, '\n')
+            .replace(/\*\*(.*?)\*\*/g, '$1')
+            .split('\n')
+            .map((line) => line.trim())
+            .filter(Boolean);
+    };
 
     return (
         <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
-
             {/* Expanded Chat Window */}
             <div className={`transition-all duration-300 transform origin-bottom-right ${isOpen ? 'scale-100 opacity-100 mb-4' : 'scale-0 opacity-0 h-0 w-0 mb-0 pointer-events-none'}`}>
                 <div className="glass w-[350px] sm:w-[400px] h-[500px] max-h-[70vh] rounded-2xl flex flex-col border border-slate-700/50 shadow-2xl overflow-hidden bg-slate-900/95 backdrop-blur-xl">
-
                     {/* Header */}
                     <div className="bg-slate-800/80 p-4 border-b border-slate-700/50 flex justify-between items-center shrink-0">
                         <div className="flex items-center gap-3">
@@ -146,23 +148,22 @@ const Chatbot = () => {
                             const lines = formatMessage(msg.content);
 
                             return (
-                            <div key={idx} className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'self-end flex-row-reverse' : 'self-start'}`}>
-                                <div className={`shrink-0 h-8 w-8 rounded-full flex items-center justify-center ${msg.role === 'user' ? 'bg-sky-500/20 text-sky-400' : 'bg-emerald-500/20 text-emerald-400'}`}>
-                                    {msg.role === 'user' ? <User size={16} /> : <Bot size={16} />}
-                                </div>
-                                <div className={`p-3 rounded-2xl text-sm leading-relaxed ${msg.role === 'user' ? 'bg-sky-500 text-slate-950 rounded-tr-sm' : 'bg-slate-800 text-slate-200 rounded-tl-sm border border-slate-700/50'}`}>
-                                    {/* {msg.content} */}
-                                    {lines.map((line, i) => (
-                                         <div key={i} className="mb-1">
-                                        {line.startsWith("* ") || line.startsWith("• ") ? (
-                                        <div className="ml-2">• {line.replace(/^(\*|•)\s/, "")}</div>
-                                        ) : (
-                                        <div>{line}</div>
-                                        )}
+                                <div key={idx} className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'self-end flex-row-reverse' : 'self-start'}`}>
+                                    <div className={`shrink-0 h-8 w-8 rounded-full flex items-center justify-center ${msg.role === 'user' ? 'bg-sky-500/20 text-sky-400' : 'bg-emerald-500/20 text-emerald-400'}`}>
+                                        {msg.role === 'user' ? <User size={16} /> : <Bot size={16} />}
                                     </div>
-                                    ))}
+                                    <div className={`p-3 rounded-2xl text-sm leading-relaxed ${msg.role === 'user' ? 'bg-sky-500 text-slate-950 rounded-tr-sm' : 'bg-slate-800 text-slate-200 rounded-tl-sm border border-slate-700/50'}`}>
+                                        {lines.map((line, i) => (
+                                            <div key={i} className="mb-1">
+                                                {line.startsWith('* ') || line.startsWith('- ') ? (
+                                                    <div className="ml-2">- {line.replace(/^(\*|-)\s/, '')}</div>
+                                                ) : (
+                                                    <div>{line}</div>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
                             );
                         })}
                         {isLoading && (
@@ -211,7 +212,9 @@ const Chatbot = () => {
                     onClick={() => setIsOpen(!isOpen)}
                     className={`relative group flex items-center justify-center h-14 w-14 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all duration-300 hover:scale-110 z-50 ${isOpen ? 'bg-slate-800 text-slate-200 border border-slate-700/50' : 'bg-emerald-500 text-slate-900'}`}
                 >
-                    {isOpen ? <X size={24} className="transform group-hover:rotate-90 transition-transform duration-300" /> : (
+                    {isOpen ? (
+                        <X size={24} className="transform group-hover:rotate-90 transition-transform duration-300" />
+                    ) : (
                         <>
                             <MessageSquare size={24} className="transform group-hover:-translate-y-0.5 transition-transform duration-300" />
                             <span className="absolute top-0 right-0 h-3 w-3 rounded-full bg-red-500 border-2 border-slate-900 animate-pulse"></span>
