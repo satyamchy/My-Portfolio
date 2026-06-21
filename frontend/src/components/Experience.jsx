@@ -1,20 +1,21 @@
 import React from "react";
-import { EXPERIENCE_DATA } from '../data';
 import { Briefcase, Component } from 'lucide-react';
+import data from '../data.json';
+const { experience } = data;
 
 const Experience = () => {
     return (
         <section id="experience" className="flex flex-col gap-10 w-full scroll-mt-32">
             <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400 mb-4">Work Experience</h2>
-            
+
             <div className="relative border-l-2 border-slate-700/60 ml-4 md:ml-6">
-                {EXPERIENCE_DATA.map((exp) => (
+                {experience.map((exp) => (
                     <div key={exp.id} className="mb-14 ml-8 md:ml-14 relative group">
                         {/* Timeline Dot */}
                         <span className="absolute -left-[45px] md:-left-[69px] top-0 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-slate-900 border-2 border-sky-500 text-sky-400 group-hover:bg-sky-500 group-hover:text-slate-900 transition-all duration-300 shadow-[0_0_10px_rgba(14,165,233,0.2)] group-hover:shadow-[0_0_20px_rgba(14,165,233,0.5)] z-10">
                             <Briefcase size={20} className="md:w-6 md:h-6" />
                         </span>
-                        
+
                         {/* Content Card */}
                         <div className="glass rounded-3xl p-6 md:p-8 border-slate-700/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col gap-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] lg:w-[85%]">
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
@@ -26,7 +27,7 @@ const Experience = () => {
                                     {exp.period}
                                 </span>
                             </div>
-                            
+
                             {/* General description if exists */}
                             {exp.description && (
                                 <p className="text-slate-400 leading-relaxed mt-2 text-sm md:text-base border-b border-slate-700/50 pb-4 mb-4">

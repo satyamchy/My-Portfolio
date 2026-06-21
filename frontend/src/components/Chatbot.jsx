@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { Bot, Loader2, MessageSquare, Send, Sparkles, User, X } from 'lucide-react';
-import { HERO_DATA, ABOUT_DATA, SKILLS_DATA, EXPERIENCE_DATA, EDUCATION_CERTS_DATA, PROJECTS_DATA, ADDITIONAL_INFO } from '../data';
+import data from '../data.json';
+const { hero, about, skills, experience, education, certifications, projects, additional_info } = data;
 //import { retrieveRelevantPortfolioContext } from '../lib/portfolioVectorStore';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
-        { role: 'ai', content: `Hello! I am ${HERO_DATA.name.split(' ')[0]}'s AI Assistant. Ask me anything about his skills, experience, or projects to see if he's a fit for your role!` }
+        { role: 'ai', content: `Hello! I am ${hero.name.split(' ')[0]}'s AI Assistant. Ask me anything about his skills, experience, or projects to see if he's a fit for your role!` }
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -23,20 +24,21 @@ const Chatbot = () => {
     }, [messages, isOpen]);
 
     // Strips out non-useful or circular data before sending to the backend
-    // const getCleanContext = () => {
-    //     const cleanSkills = SKILLS_DATA.map(({ icon, color, ...rest }) => rest);
-    //     const cleanProjects = PROJECTS_DATA.map(({ image, ...rest }) => rest);
+    const getCleanContext = () => {
+        const cleanSkills = skills.map(({ icon, color, ...rest }) => rest);
+        const cleanProjects = projects.map(({ image, ...rest }) => rest);
 
-    //     return JSON.stringify({
-    //         portfolio_owner: HERO_DATA,
-    //         about: ABOUT_DATA,
-    //         skills: cleanSkills,
-    //         experience: EXPERIENCE_DATA,
-    //         education: EDUCATION_CERTS_DATA,
-    //         projects: cleanProjects,
-    //         additionalInfo: ADDITIONAL_INFO
-    //     });
-    // };
+        return JSON.stringify({
+            portfolio_owner: hero,
+            about: about,
+            skills: cleanSkills,
+            experience: experience,
+            education: education,
+            certifications: certifications,
+            projects: cleanProjects,
+            additionalInfo: additional_info
+        });
+    };
 
     const handleSend = async (e) => {
         e?.preventDefault();
@@ -47,32 +49,30 @@ const Chatbot = () => {
         const newMessages = [...messages, { role: 'user', content: userMsg }];
         // const portfolioContext = retrieveRelevantPortfolioContext(userMsg);
 
-
         setMessages(newMessages);
         setIsLoading(true);
 
         try {
             const API_URL = import.meta.env.VITE_AI_API_URL || 'http://127.0.0.1:8000/api';
 
-            // const response = await fetch(`${API_URL}/chat`, {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({
-            //         message: userMsg,
-            //         history: newMessages.slice(-8),
-            //         portfolioContext: getCleanContext()
-            //         //  portfolioContext.contextText,
-            //         // contextSources: portfolioContext.matches
-            //     })
-            // });
-            const response = await fetch(`${API_URL}/messages/chat`, {
+            const response = await fetch(`${API_URL}/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     message: userMsg,
                     history: newMessages.slice(-8),
+                    portfolioContext: getCleanContext()
+
                 })
             });
+            // const response = await fetch(`${API_URL}/messages/chat`, {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({
+            //         message: userMsg,
+            //         history: newMessages.slice(-8),
+            //     })
+            // });
 
             if (!response.ok) {
                 throw new Error(`Backend responded with status ${response.status} ${response.statusText}`);

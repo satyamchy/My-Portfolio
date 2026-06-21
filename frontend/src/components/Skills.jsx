@@ -1,10 +1,26 @@
 import React from "react";
-import { SKILLS_DATA } from '../data';
+import { Server, Layout, Cloud, Brain, Database, Briefcase } from 'lucide-react';
+import data from '../data.json';
+const { skills } = data;
 
 const Skills = () => {
+    // Map categories to specific lucide-react icons since JSON cannot store React components
+    const getIconForCategory = (categoryName) => {
+        if (categoryName.includes('Backend')) return Server;
+        if (categoryName.includes('Frontend')) return Layout;
+        if (categoryName.includes('Cloud')) return Cloud;
+        if (categoryName.includes('AI')) return Brain;
+        if (categoryName.includes('Data')) return Database;
+        return Briefcase;
+    };
+
     // Helper to map color to actual tailwind classes since dynamic concatenation often fails PurgeCSS
     const getColorClasses = (color) => {
         if (color === 'sky') return { bg: 'bg-sky-500/10', text: 'text-sky-400' };
+        if (color === 'amber') return { bg: 'bg-amber-500/10', text: 'text-amber-400' };
+        if (color === 'rose') return { bg: 'bg-rose-500/10', text: 'text-rose-400' };
+        if (color === 'cyan') return { bg: 'bg-cyan-500/10', text: 'text-cyan-400' };
+        if (color === 'violet') return { bg: 'bg-violet-500/10', text: 'text-violet-400' };
         return { bg: 'bg-emerald-500/10', text: 'text-emerald-400' };
     };
 
@@ -16,8 +32,8 @@ const Skills = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {SKILLS_DATA.map((category, idx) => {
-                    const Icon = category.icon;
+                {skills.map((category, idx) => {
+                    const Icon = getIconForCategory(category.category);
                     const styles = getColorClasses(category.color);
                     return (
                         <div key={idx} className="glass rounded-3xl p-8 flex flex-col gap-5 border-slate-700/50 hover:bg-slate-800/80 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(16,185,129,0.1)]">

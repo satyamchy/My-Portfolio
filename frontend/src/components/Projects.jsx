@@ -1,6 +1,7 @@
 import React from "react";
-import { PROJECTS_DATA } from '../data';
 import { Github, ExternalLink } from 'lucide-react';
+import data from '../data.json';
+const { projects } = data;
 
 const Projects = () => {
     return (
@@ -13,13 +14,13 @@ const Projects = () => {
                 <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400">Deployed Projects</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {PROJECTS_DATA.slice(0, 3).map(item => (
+                {projects.slice(0, 3).map(item => (
                     <div key={item.id} className="glass rounded-3xl overflow-hidden border-slate-700/50 hover:-translate-y-2 transition-all duration-300 group flex flex-col h-full bg-slate-800/40 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] max-w-[450px] mx-auto w-full">
                         <div className="relative overflow-hidden w-full h-56 bg-slate-700 shrink-0">
-                            <img 
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                                src={item.image} 
-                                alt={item.name} 
+                            <img
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                src={item.image}
+                                alt={item.name}
                             />
                             <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 backdrop-blur-sm">
                                 {item.github ? (
@@ -34,7 +35,7 @@ const Projects = () => {
                                 ) : null}
                             </div>
                         </div>
-                        
+
                         <div className="p-8 flex flex-col flex-grow">
                             <h4 className="text-2xl font-bold text-slate-100 mb-3">{item.name}</h4>
                             <p className="text-slate-400 text-sm leading-relaxed mb-6">
@@ -56,13 +57,13 @@ const Projects = () => {
                 <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400">Sample Projects</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {PROJECTS_DATA.slice(3).map(item => (
+                {projects.slice(3).map(item => (
                     <div key={item.id} className="glass rounded-3xl overflow-hidden border-slate-700/50 hover:-translate-y-2 transition-all duration-300 group flex flex-col h-full bg-slate-800/40 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] max-w-[450px] mx-auto w-full">
                         <div className="relative overflow-hidden w-full h-56 bg-slate-700 shrink-0">
-                            <img 
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                                src={item.image} 
-                                alt={item.name} 
+                            <img
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                src={item.image}
+                                alt={item.name}
                             />
                             <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 backdrop-blur-sm">
                                 {item.github ? (
@@ -77,7 +78,7 @@ const Projects = () => {
                                 ) : null}
                             </div>
                         </div>
-                        
+
                         <div className="p-8 flex flex-col flex-grow">
                             <h4 className="text-2xl font-bold text-slate-100 mb-3">{item.name}</h4>
                             <p className="text-slate-400 text-sm leading-relaxed mb-6">
