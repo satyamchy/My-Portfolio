@@ -1,5 +1,5 @@
 import React from 'react'
-import { Download, ChevronDown, Sparkles, Briefcase, MapPin } from "lucide-react";
+import { Download, ChevronDown, Sparkles, Briefcase, MapPin, Mail, Phone, } from "lucide-react";
 import data from '../data.json';
 const { hero } = data;
 
@@ -78,12 +78,43 @@ const Feed = () => {
                         </div>
                     </div>
                     {/* LinkedIn */}
-                    <a href={hero.linkedinLink} target="_blank" rel="noopener noreferrer" className='group relative flex items-center justify-center gap-3 px-6 py-4 rounded-full bg-slate-800 text-emerald-400 font-black text-sm md:text-base hover:bg-slate-700 hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.3)] border border-slate-700/50 overflow-hidden'>
+                    <a href={hero.linkedin_link} target="_blank" rel="noopener noreferrer" className='group relative flex items-center justify-center gap-3 px-6 py-4 rounded-full bg-slate-800 text-emerald-400 font-black text-sm md:text-base hover:bg-slate-700 hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.3)] border border-slate-700/50 overflow-hidden'>
                         <span className="relative z-10 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin group-hover:scale-110 transition-transform duration-300"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
                             LinkedIn
                         </span>
                     </a>
+                    {/* Phone */}
+                    <div className="relative group inline-block">
+                        <a href={`tel:${hero.phone}`} className='group/btn relative flex items-center justify-center gap-3 px-6 py-4 rounded-full bg-slate-800 text-emerald-400 font-black text-sm md:text-base hover:bg-slate-700 hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.3)] border border-slate-700/50 overflow-hidden'>
+                            <span className="relative z-10 flex items-center gap-2">
+                                <Phone size={20} className="group-hover/btn:scale-110 transition-transform duration-300" />
+                            </span>
+                        </a>
+
+                        {/* Tooltip */}
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 whitespace-nowrap">
+                            <div className="bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-xl px-4 py-2 shadow-2xl">
+                                <span className="text-sm font-semibold text-emerald-400">{hero.phone}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Email */}
+                    <div className="relative group inline-block">
+                        <a href={`mailto:${hero.email}`} className='group/btn relative flex items-center justify-center gap-3 px-6 py-4 rounded-full bg-slate-800 text-sky-400 font-black text-sm md:text-base hover:bg-slate-700 hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.3)] border border-slate-700/50 overflow-hidden'>
+                            <span className="relative z-10 flex items-center gap-2">
+                                <Mail size={20} className="group-hover/btn:scale-110 transition-transform duration-300" />
+                            </span>
+                        </a>
+
+                        {/* Tooltip */}
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 whitespace-nowrap">
+                            <div className="bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-xl px-4 py-2 shadow-2xl">
+                                <span className="text-sm font-semibold text-sky-400">{hero.email}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

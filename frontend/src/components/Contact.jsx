@@ -34,12 +34,12 @@ const Contact = () => {
                         </div>
                         <div className="flex flex-col gap-1 items-center">
                             <span className="font-bold text-slate-200">Email Me</span>
-                            <span className="text-sm text-slate-400 group-hover:text-sky-300 transition-colors break-all">Direct message</span>
+                            <span className="text-sm text-slate-400 group-hover:text-sky-300 transition-colors break-all">{hero.email}</span>
                         </div>
                     </a>
 
                     {/* LinkedIn */}
-                    <a href={hero.linkedinLink} target='_blank' rel="noopener noreferrer" className="flex-1 min-w-[200px] max-w-[250px] group flex flex-col items-center justify-center gap-4 bg-slate-900/60 p-8 rounded-3xl border border-slate-700/50 hover:border-emerald-500/50 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(16,185,129,0.1)]">
+                    <a href={hero.linkedin_link} target='_blank' rel="noopener noreferrer" className="flex-1 min-w-[200px] max-w-[250px] group flex flex-col items-center justify-center gap-4 bg-slate-900/60 p-8 rounded-3xl border border-slate-700/50 hover:border-emerald-500/50 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(16,185,129,0.1)]">
                         <div className="p-4 bg-emerald-500/10 rounded-full group-hover:bg-emerald-500 group-hover:text-slate-900 text-emerald-400 transition-colors relative">
                             <Linkedin size={28} />
                             <ExternalLink size={12} className="absolute top-0 right-0 m-1 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -51,7 +51,7 @@ const Contact = () => {
                     </a>
 
                     {/* GitHub */}
-                    <a href={hero.githubLink} target='_blank' rel="noopener noreferrer" className="flex-1 min-w-[200px] max-w-[250px] group flex flex-col items-center justify-center gap-4 bg-slate-900/60 p-8 rounded-3xl border border-slate-700/50 hover:border-sky-500/50 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(14,165,233,0.1)]">
+                    <a href={hero.github_link} target='_blank' rel="noopener noreferrer" className="flex-1 min-w-[200px] max-w-[250px] group flex flex-col items-center justify-center gap-4 bg-slate-900/60 p-8 rounded-3xl border border-slate-700/50 hover:border-sky-500/50 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(14,165,233,0.1)]">
                         <div className="p-4 bg-sky-500/10 rounded-full group-hover:bg-sky-500 group-hover:text-slate-900 text-sky-400 transition-colors relative">
                             <Github size={28} />
                             <ExternalLink size={12} className="absolute top-0 right-0 m-1 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -63,7 +63,7 @@ const Contact = () => {
                     </a>
 
                     {/* LeetCode */}
-                    <a href={hero.leetcodeLink} target='_blank' rel="noopener noreferrer" className="flex-1 min-w-[200px] max-w-[250px] group flex flex-col items-center justify-center gap-4 bg-slate-900/60 p-8 rounded-3xl border border-slate-700/50 hover:border-amber-500/50 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(245,158,11,0.1)]">
+                    <a href={hero.leetcode_link} target='_blank' rel="noopener noreferrer" className="flex-1 min-w-[200px] max-w-[250px] group flex flex-col items-center justify-center gap-4 bg-slate-900/60 p-8 rounded-3xl border border-slate-700/50 hover:border-amber-500/50 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(245,158,11,0.1)]">
                         <div className="p-4 bg-amber-500/10 rounded-full group-hover:bg-amber-500 group-hover:text-slate-900 text-amber-400 transition-colors relative">
                             <Code size={28} />
                             <ExternalLink size={12} className="absolute top-0 right-0 m-1 opacity-0 group-hover:opacity-100 transition-opacity" />

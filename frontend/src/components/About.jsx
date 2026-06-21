@@ -1,5 +1,5 @@
-import data  from '../data.json';
-const {about} = data;
+import data from '../data.json';
+const { about } = data;
 
 const About = () => {
     return (
@@ -9,6 +9,9 @@ const About = () => {
                 <div className="text-slate-300 text-lg leading-relaxed flex flex-col gap-6 font-medium">
                     <p>{about.description1}</p>
                     <p>{about.description2}</p>
+                    <p className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400">{about.description3}</p>
+                    <p className="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-pink-400">{about.description4}</p>
+
                 </div>
             </div>
         </section>

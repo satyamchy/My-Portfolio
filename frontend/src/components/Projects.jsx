@@ -6,11 +6,11 @@ const { projects } = data;
 const Projects = () => {
     return (
         <section id="projects" className="flex flex-col gap-10 w-full scroll-mt-32">
-            <div className="flex flex-col items-center md:items-start text-center md:text-left border-b border-slate-700/50 pb-6 mb-2">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left border-b border-slate-700/50 pb-6 mb-4">
                 <p className="text-emerald-400 font-semibold tracking-widest mb-2 uppercase text-sm">Browse my recent</p>
-                <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400">Projects Portfolio</h2>
+                <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400 pb-4">Projects Portfolio</h2>
             </div>
-            <div className="flex flex-col items-center md:items-start text-center md:text-left border-b border-slate-700/50 pb-6 mb-8 mt-12">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left border-b border-slate-700/50 pb-6 mb-8">
                 <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400">Deployed Projects</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

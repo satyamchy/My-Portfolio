@@ -38,8 +38,10 @@
   },
   "about": {
     "title": "About Me",
-    "description1": "Software Engineer with 1+ year of experience building and shipping AI-powered products and full-stack applications in production. At Xornor Technology, I engineer LLM-driven workflows, REST APIs, and scalable backend services across real user-facing products. Earlier, at Innova Solutions, I built automated data pipelines processing enterprise-scale healthcare data for a Fortune 25 US client. Core stack: Python · React · Node.js · FastAPI · LangChain · PostgreSQL · AWS. Seeking a Software Engineer or AI Engineer role where I can build intelligent, scalable systems from the ground up",
-    "description2": "With hands-on industry experience at Innova Solutions, I've worked on ETL pipelines, Power BI analytics, Snowflake, Databricks, SQL, IICS, and AWS while also developing modern web applications using React, Node.js, FastAPI, and the MERN stack. I'm driven by continuous learning, clean engineering, and creating technology that delivers real value."
+    "description1": "Software Engineer with 1+ year of experience building and shipping AI-powered products and full-stack applications in production. At Xornor Technologies, I engineer LLM-driven workflows, REST APIs, and scalable backend services — from an AI-powered Jira analytics platform to KAI-LMS, a production Learning Management System with rubric-based AI grading.",
+    "description2": "Earlier at Innova Solutions, delivered production-grade data pipelines and BI reporting for Centene — a Fortune 25 US healthcare client — processing Medicaid and Medicare claim data at enterprise scale.",
+    "description3": "Core stack: Python · React · Node.js · FastAPI · LangChain · RAG Apps · Fine Tuning · PostgreSQL · AWS.",
+    "description4": "Seeking a Software Engineer or AI Engineer role where I can build intelligent, scalable systems from the ground up."
   },
   "skills": [
     {
@@ -74,6 +76,22 @@
       ]
     },
     {
+      "category": "AI / ML (Learning & Projects)",
+      "color": "rose",
+      "skills": [
+        "Fine-tuning LLMs",
+        "LangChain",
+        "RAG Pipelines",
+        "ChromaDB",
+        "Vector Search",
+        "Vector Databases",
+        "PyTorch",
+        "Machine Learning",
+        "Deep Learning",
+        "Model Integration"
+      ]
+    },
+    {
       "category": "Cloud & Tools",
       "color": "amber",
       "skills": [
@@ -83,20 +101,9 @@
         "Git",
         "GitHub",
         "Linux / Ubuntu WSL",
-        "Postman"
-      ]
-    },
-    {
-      "category": "AI / ML (Learning & Projects)",
-      "color": "rose",
-      "skills": [
-        "PyTorch",
-        "Machine Learning",
-        "Deep Learning",
-        "NLP Basics",
-        "LangChain",
-        "Vector Databases",
-        "Model Integration"
+        "Postman",
+        "Cursor",
+        "VS Code"
       ]
     },
     {
@@ -133,36 +140,25 @@
       "id": 3,
       "title": "Software Engineer & AI Agents Engineer",
       "company": "Xornor Technologies",
-      "period": "April 2026 - Present",
-      "description": "Working as a Software Engineer & AI Agents Engineer, building enterprise-scale web applications, AI-powered automation systems, intelligent workflows, and data-driven platforms. Contributing across full-stack development, backend architecture, AI integration, workflow automation, and scalable cloud-based solutions.",
+      "period": "May 2026 - Present",
+      "location": "Mohali",
+      "description": "Building enterprise-scale AI-powered web applications, automation systems, and data-driven platforms across full-stack development, backend architecture, AI integration, and workflow automation.",
       "projects": [
         {
-          "name": "Jira Worklog Performance Tracker",
-          "detail": "Developed and deployed a full-stack Jira Worklog Performance Tracker using React, Node.js, Express, PostgreSQL, Jira REST APIs, LangChain, OpenAI, and AWS. Automated worklog ingestion, project synchronization, and performance analytics for engineering teams and managers."
+          "name": "AI-Powered Jira Analytics Platform",
+          "detail": "Built and deployed end-to-end — Jira REST API ingestion, LangChain + OpenAI pipeline for worklog classification and anomaly detection, and a React dashboard surfacing productivity and utilisation insights to engineering managers across 50+ projects."
         },
         {
-          "name": "Performance Analytics & Reporting Dashboard",
-          "detail": "Built interactive dashboards and reporting systems to analyze productivity trends, resource utilization, project progress, and work allocation, replacing manual spreadsheet-based tracking with real-time analytics and actionable insights."
+          "name": "Idempotent ETL & Data Synchronization Pipelines",
+          "detail": "Delivered within a 2-week sprint — architected cron-scheduled ETL pipelines for continuous Jira data synchronization, implemented deduplication and schema validation layers ensuring zero data loss across daily ingestion cycles, and eliminated 90% of manual reporting overhead."
         },
         {
-          "name": "AI-Powered Worklog Intelligence",
-          "detail": "Designed AI-driven workflows using LangChain and OpenAI to analyze, classify, and summarize Jira worklog comments, automatically identifying suspicious entries, anomalies, and generating performance recommendations."
+          "name": "KAI-LMS — AI-Powered Learning Management System",
+          "detail": "Built a production multi-role LMS with an AI-driven rubric-based grading module; the LLM evaluation layer assesses open-ended student responses against structured rubric criteria, providing consistent detailed feedback at scale and cutting instructor review time by an estimated 10×."
         },
         {
-          "name": "Automated Data Synchronization Pipelines",
-          "detail": "Implemented scalable data pipelines and scheduled automation jobs for continuous synchronization, intelligent worklog processing, and reporting across large numbers of projects, teams, and users."
-        },
-        {
-          "name": "KAI-LMS (AI-Powered Global Learning Management Platform)",
-          "detail": "Contributed to the development of a large-scale Learning Management System supporting students, instructors, and administrators with course management, assignments, discussions, announcements, grading, and academic performance tracking."
-        },
-        {
-          "name": "AI-Based Assignment Evaluation Engine",
-          "detail": "Developed AI-powered assessment workflows that evaluate student submissions using configurable rubric-based grading criteria, generate personalized feedback, assist educators in grading, and improve consistency in evaluation processes."
-        },
-        {
-          "name": "Academic Workflow & Learning Services",
-          "detail": "Engineered scalable backend services, APIs, and full-stack features supporting course delivery, assignment lifecycle management, student progress tracking, academic reporting, and personalized learning experiences."
+          "name": "KAI-LMS Platform Extension (Ongoing)",
+          "detail": "Extending KAI-LMS as part of a 4-engineer team — engineering a real-time in-app messaging system, integrating LLM-based automated evaluation for assignments and quizzes, and resolving production bugs across the platform to improve system stability and user experience."
         }
       ]
     },
@@ -171,47 +167,28 @@
       "title": "Software Engineer Intern",
       "company": "Innova Solutions",
       "period": "May 2025 - March 2026",
-      "description": "Worked as a Software Engineer Intern at Innova Solutions, Hyderabad, delivering production-grade ETL pipelines, BI reporting solutions, and enterprise analytics systems for US healthcare clients. Gained strong hands-on experience in modern data engineering tools, automation platforms, cloud data warehouses, and large-scale business reporting environments.",
+      "location": "Hyderabad",
+      "description": "Delivered production-grade data pipelines and BI reporting solutions for Centene (Fortune 25 US healthcare client), processing Medicaid and Medicare claim data at enterprise scale.",
       "projects": [
         {
-          "name": "Power BI Reporting Solutions",
-          "detail": "Designed and developed interactive Power BI dashboards for KPI tracking, business insights, claim error monitoring, and operational reporting. Enabled faster decision-making through clear and dynamic visual analytics."
+          "name": "1,800+ Files Data Consolidation Pipeline",
+          "detail": "Built an automated Power Query (M-Code) pipeline to ingest, normalise, and consolidate 1,800+ monthly CSV files across 60+ heterogeneous report schemas into a single unified analytics dataset, eliminating all manual report merging and enabling consistent month-over-month analytics at scale."
         },
         {
-          "name": "1800+ Files Data Consolidation Pipeline",
-          "detail": "Engineered an automated Power Query (M-Code) pipeline to ingest, standardize, clean, and merge 1,800+ monthly CSV files across 60+ report schemas into a unified dataset for enterprise reporting."
+          "name": "End-to-End Claims Reporting Workflow",
+          "detail": "Replaced legacy SAS extraction with optimised Oracle SQL queries and built a full workflow — Oracle DB → Power Automate → SharePoint → Power BI — enabling daily and monthly refresh dashboards tracking Medicaid and Medicare insurance claim errors across public and private payers."
         },
         {
-          "name": "Legacy SAS to SQL Migration",
-          "detail": "Migrated legacy SAS-based reporting processes into optimized SQL workflows, improving automation, maintainability, and reporting efficiency for healthcare data operations."
+          "name": "Healthcare Error Analytics Dataset",
+          "detail": "Engineered a derived analytics dataset with computed columns — Key ID, Entry Date, Claim Age, and SLA metrics — enabling compliance trend visualisation and SLA breach tracking across monthly reporting cycles for a client processing millions of healthcare claims annually."
         },
         {
-          "name": "Power Automate Workflow Automation",
-          "detail": "Built automated workflows using Power Automate for alerts, approvals, scheduled refresh notifications, and data quality mismatch reporting, significantly reducing manual effort."
+          "name": "Power BI Dashboards & Workflow Automation",
+          "detail": "Designed interactive Power BI dashboards for KPI tracking, claim error monitoring, and operational reporting; built supporting Power Automate workflows for alerts, scheduled refresh notifications, and data quality mismatch reporting, significantly reducing manual effort."
         },
         {
-          "name": "Snowflake Cloud Data Warehouse",
-          "detail": "Completed hands-on internal training on Snowflake including warehouse tuning, clustering keys, zero-copy cloning, time travel, tasks, streams, stored procedures, and SQL optimization for scalable cloud analytics workloads."
-        },
-        {
-          "name": "IICS ETL Pipelines",
-          "detail": "Built practice ETL workflows using Informatica Intelligent Cloud Services (IICS) with parameterized mappings for multi-source data ingestion across cloud systems."
-        },
-        {
-          "name": "dbt Transformation Layer",
-          "detail": "Explored dbt for creating modular SQL transformation layers on top of Snowflake, including staging models, marts, reusable transformations, and analytics-ready datasets."
-        },
-        {
-          "name": "Databricks & SQL Operations",
-          "detail": "Used SQL and Databricks for querying datasets, supporting data analysis tasks, and handling large-scale structured data processing requirements."
-        },
-        {
-          "name": "AWS Cloud Exposure",
-          "detail": "Gained practical experience with AWS services such as storage and cloud infrastructure used in modern enterprise data workflows."
-        },
-        {
-          "name": "Healthcare Error Analytics System",
-          "detail": "Built derived datasets with metrics like Claim Age, SLA, Entry Date, Completion Date, and Key IDs for monitoring Medicaid & Medicare claim processing errors across US healthcare operations."
+          "name": "Cloud & Enterprise Data Tools",
+          "detail": "Applied Snowflake (warehouse tuning, streams, tasks, time travel) and Informatica IICS (parameterized ETL mappings) in practical data integration tasks; additionally explored dbt transformation layers and Databricks for large-scale structured data processing."
         }
       ]
     },
@@ -219,7 +196,7 @@
       "id": 2,
       "title": "Full Stack Developer & AI Builder with fast learning and problem-solving mindset",
       "company": "College Projects & Personal Development",
-      "period": "2023 - Present",
+      "period": "2022 - Present",
       "description": "Built modern full-stack applications focused on scalable backend systems, responsive frontend experiences, AI integrations, and solving real-world problems through college and self-driven projects.",
       "projects": [
         {
@@ -227,7 +204,7 @@
           "detail": "OneAI is a research-focused Personal AI Operating System designed to explore long-term memory, memoization, Retrieval-Augmented Generation (RAG), and scalable AI architectures inspired by modern data platforms such as Snowflake, providing a foundation for intelligent agents, knowledge management, and personalized AI workflows and it also combines LLM-powered chat, web search, and tool execution in a unified platform, built with FastAPI, React, PostgreSQL, Redis, and OpenRouter for future memory and agent-based workflows."
         },
         {
-          "name": "Portfolio Website with AI Chatbot that answers questions about skills, projects, and professional experience dynamically.",
+          "name": "Portfolio Website with AI Chatbot",
           "detail": "Built a portfolio chatbot with a RAG pipeline — stored portfolio data in ChromaDB, retrieved relevant chunks on each query, and passed them as context to the LLM for source-grounded answers, cuts prompt size compared to sending full data on every call. Deployed full-stack with React frontend and Node.js/Express backend; handles real-time queries with  conversational follow-up support."
         },
         {
